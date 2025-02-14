@@ -1,9 +1,14 @@
 fileFormatVersion: 2
-guid: 9669b7f5fa7b3374bbcd59cdef82af8f
+guid: dc757362ec8ae324ca84126ed34b853d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Buttons
+    second: {fileID: 2100000, guid: 9143b3a352c0c484bbfd83d38ea8925f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -14,6 +19,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Screen
     second: {fileID: -876546973899608171, guid: d73a135d8be2cd948819aa324b172bd4, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Switches
+    second: {fileID: 2100000, guid: 042acc4a5b9600e41a55854d442af188, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
