@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
     private bool chasing;
     public float distanceToChase = 10f, distanceToLose = 15f;
     private Vector3 targetPoint;
-
+    public Transform debugSphere;
 
 
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
 
-        targetPoint = PlayerController.instance.transform.position;
+        targetPoint = debugSphere.transform.position;
         targetPoint.y = transform.position.y;
 
         if (!chasing)
