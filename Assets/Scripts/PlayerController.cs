@@ -129,6 +129,8 @@ public class PlayerController : MonoBehaviour
                 firePoint.LookAt(camTrans.position + (camTrans.forward * 30f));
             }
             Instantiate(bullet, firePoint.position, firePoint.rotation);
+
+            FindObjectOfType<AudioManager>().PlaySound("Shot");
         }
 
         anim.SetFloat("moveSpeed", moveInput.magnitude);
