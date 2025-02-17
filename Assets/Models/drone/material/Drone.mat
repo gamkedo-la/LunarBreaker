@@ -15,7 +15,6 @@ Material:
   - _EMISSION
   - _METALLICGLOSSMAP
   - _NORMALMAP
-  - _PARALLAXMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
@@ -28,7 +27,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 63385f66c75f2684591fb130dc8cb746, type: 3}
+        m_Texture: {fileID: 2800000, guid: 498d21a0e45d7f648b47d8a1727d4d35, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -44,19 +43,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 2aa5c961d459c2c4eb8308af14092a8c, type: 3}
+        m_Texture: {fileID: 2800000, guid: c146e1c12b0d60c4d847f6b3ea713e3c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: aa3c8fff2df3da541ad4f16ec340467f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 644d210ee668e774996196c8b6a7ccaf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: edbd79fc77d85d44f9bfeef7c72a2ffe, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4822020f329f6224da5ea97f082cb4c1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 8776fd88ff0bc124a9d5c09fb62b4bc0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:

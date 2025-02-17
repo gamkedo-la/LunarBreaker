@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: buttons
+  m_Name: backpack
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -27,7 +27,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: e601eee84405ba34c99348a37ff0e83a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 868e197a2ee45204393a50b2746cab28, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -43,19 +43,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 7166ba33f016ae644884ef215643e39c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1184c8f7017f4e241b5d16be4010bd0d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 1d9f7833f53cfa64bae30f6619e06b27, type: 3}
+        m_Texture: {fileID: 2800000, guid: 66790386105e1de48a29c347dbad44f7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: ce0dac02691b0ac45a07f53bcb56ce67, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2166d75a5eb9aff41baba2a26ba9dc18, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: b3020c8fb66cad6458e7427dfa64edf6, type: 3}
+        m_Texture: {fileID: 2800000, guid: 85abb624eafc8bb4c94a0149f87cf441, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
