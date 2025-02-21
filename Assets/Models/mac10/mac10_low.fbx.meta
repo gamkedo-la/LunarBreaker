@@ -70,8 +70,8 @@ ModelImporter:
       name: Gun Rig|mac10_idle
       takeName: Gun Rig|mac10_idle
       internalID: -2082500982724709322
-      firstFrame: 0
-      lastFrame: 74
+      firstFrame: 1
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -157,8 +157,8 @@ ModelImporter:
       name: Gun Rig|mac10_walk
       takeName: Gun Rig|mac10_walk
       internalID: -3197108710750633562
-      firstFrame: 0
-      lastFrame: 28
+      firstFrame: 1
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
