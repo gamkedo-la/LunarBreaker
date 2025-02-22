@@ -37,8 +37,33 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator Shoot()
+    {
+
+        Debug.Log("firing:" + firing);
+        //shoots bullet towards crosshair
+        RaycastHit hit;
+        if (Physics.Raycast(camTrans.position, camTrans.forward, out hit, 50f))
+        {
+            //check for upclose
+            if (Vector3.Distance(camTrans.position, hit.point) > 2f)
+            {
+                firePoint.LookAt(hit.point);
+            }
+
+        }
+        else
+        {
+            firePoint.LookAt(camTrans.position + (camTrans.forward * 30f));
+        }
+        Instantiate(bullet, firePoint.position, firePoint.rotation);
+        
+        yield return new WaitForSeconds(0.433f);
+        firing = false;
+    }
+
+        // Update is called once per frame
+        void Update()
     {
         //moveInput.x = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         //moveInput.z = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
@@ -111,7 +136,18 @@ public class PlayerController : MonoBehaviour
         camTrans.rotation = Quaternion.Euler(camTrans.rotation.eulerAngles + new Vector3(-mouseInput.y,0f,0f));
 
         // Shooting
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (!firing)
+            {
+                firing = true;
+                StartCoroutine(Shoot());
+            }
 
+
+
+        }
+        /*
         if(Input.GetMouseButtonDown(0))
         {
             firing = true;
@@ -132,6 +168,7 @@ public class PlayerController : MonoBehaviour
             }
             Instantiate(bullet, firePoint.position, firePoint.rotation);            
         }
+        */
 
         anim.SetFloat("moveSpeed", moveInput.magnitude);
         anim.SetBool("onGround",canJump);
