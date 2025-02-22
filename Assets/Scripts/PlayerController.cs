@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bullet;
     public Transform firePoint;
+    public bool firing = false;
 
     public void Awake()
     {
@@ -113,6 +114,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
+            firing = true;
             //shoots bullet towards crosshair
             RaycastHit hit;
             if (Physics.Raycast(camTrans.position,camTrans.forward,out hit, 50f))
@@ -133,6 +135,7 @@ public class PlayerController : MonoBehaviour
 
         anim.SetFloat("moveSpeed", moveInput.magnitude);
         anim.SetBool("onGround",canJump);
+        anim.SetBool("firing", firing);
 
 
     }
