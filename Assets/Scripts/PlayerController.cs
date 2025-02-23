@@ -169,8 +169,8 @@ public class PlayerController : MonoBehaviour
             Instantiate(bullet, firePoint.position, firePoint.rotation);            
         }
         */
-
-        anim.SetFloat("moveSpeed", moveInput.magnitude);
+        Debug.Log(moveInput.magnitude);
+        anim.SetFloat("moveSpeed", moveInput.magnitude, 0.1f, Time.deltaTime);
         anim.SetBool("onGround",canJump);
         anim.SetBool("firing", firing);
 
