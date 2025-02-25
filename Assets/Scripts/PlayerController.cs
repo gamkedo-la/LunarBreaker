@@ -79,8 +79,11 @@ public class PlayerController : MonoBehaviour
 
         float yStore = moveInput.y;
 
-        Vector3 vertMove = transform.forward * Input.GetAxisRaw("Vertical");
-
+		// instant stop
+        // Vector3 vertMove = transform.forward * Input.GetAxisRaw("Vertical");
+        // Vector3 horiMove = transform.right * Input.GetAxisRaw("Horizontal");
+        // smooth decel stop
+		Vector3 vertMove = transform.forward * Input.GetAxisRaw("Vertical");
         Vector3 horiMove = transform.right * Input.GetAxisRaw("Horizontal");
 
         moveInput = horiMove + vertMove;
