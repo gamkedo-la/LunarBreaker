@@ -205,4 +205,15 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isSprinting", isSprinting);
 
     }
+
+    public void Teleport(Vector3 position, Quaternion rotation)
+    {
+        charCon.enabled = false;
+        charCon.transform.position = position;
+        if(rotation != null)
+        {
+            charCon.transform.rotation = rotation;
+        }
+        charCon.enabled = true;
+    }
 }
