@@ -24,7 +24,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bullet;
     public Transform firePoint;
-    public bool firing = false;
+    public bool firing;
+    public bool isReloading;
 
     public void Awake()
     {
@@ -34,13 +35,19 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        firing = false;
+        isReloading = false;
+    }
+
+    IEnumerator Reloading()
+    {
+        yield return new WaitForSeconds(1.167f);
+        isReloading = false;
     }
 
     IEnumerator Shoot()
     {
 
-        Debug.Log("firing:" + firing);
         //shoots bullet towards crosshair
         RaycastHit hit;
         if (Physics.Raycast(camTrans.position, camTrans.forward, out hit, 50f))
@@ -147,6 +154,21 @@ public class PlayerController : MonoBehaviour
 
 
         }
+
+
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("Reloading" + isReloading);
+            if (!isReloading)
+            {
+                isReloading = true;
+                StartCoroutine(Reloading());
+            }
+
+        }
+
+
         /*
         if(Input.GetMouseButtonDown(0))
         {
@@ -169,10 +191,11 @@ public class PlayerController : MonoBehaviour
             Instantiate(bullet, firePoint.position, firePoint.rotation);            
         }
         */
-        Debug.Log(moveInput.magnitude);
-        anim.SetFloat("moveSpeed", moveInput.magnitude, 0.1f, Time.deltaTime);
+
+        anim.SetFloat("moveSpeed", moveInput.magnitude, 0.05f, Time.deltaTime);
         anim.SetBool("onGround",canJump);
         anim.SetBool("firing", firing);
+        anim.SetBool("isReloading", isReloading);
 
 
     }
