@@ -24,8 +24,9 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bullet;
     public Transform firePoint;
-    public bool firing;
+    public bool isFiring;
     public bool isReloading;
+    public bool isSprinting;
 
     public void Awake()
     {
@@ -35,8 +36,9 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        firing = false;
+        isFiring = false;
         isReloading = false;
+        isSprinting = false;
     }
 
     IEnumerator Reloading()
@@ -66,7 +68,7 @@ public class PlayerController : MonoBehaviour
         Instantiate(bullet, firePoint.position, firePoint.rotation);
         
         yield return new WaitForSeconds(0.433f);
-        firing = false;
+        isFiring = false;
     }
 
         // Update is called once per frame
@@ -87,10 +89,12 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             moveInput = moveInput * runSpeed;
+            isSprinting = true;
         }
         else
         {
             moveInput = moveInput * moveSpeed;
+            isSprinting = false;
         }
 
         moveInput.y = yStore;
@@ -145,16 +149,15 @@ public class PlayerController : MonoBehaviour
         // Shooting
         if (Input.GetMouseButtonDown(0))
         {
-            if (!firing)
+            if (!isFiring)
             {
-                firing = true;
+                isFiring = true;
                 StartCoroutine(Shoot());
             }
 
 
 
         }
-
 
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -194,9 +197,9 @@ public class PlayerController : MonoBehaviour
 
         anim.SetFloat("moveSpeed", moveInput.magnitude, 0.05f, Time.deltaTime);
         anim.SetBool("onGround",canJump);
-        anim.SetBool("firing", firing);
+        anim.SetBool("isFiring", isFiring);
         anim.SetBool("isReloading", isReloading);
-
+        anim.SetBool("isSprinting", isSprinting);
 
     }
 }
