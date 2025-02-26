@@ -32,14 +32,6 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if(other.gameObject.tag == "Enemy")
-        {
-            //Destroy(other.gameObject);
-            other.gameObject.GetComponent<EnemyHealthController>().DamageEnemy(damage);
-        }
-
-
         Destroy(gameObject);
         //moves particle effect back slightly towards the player so that the effect doesn't go inside of the object it is hitting
         Instantiate(impactFX,transform.position + (transform.forward *(-moveSpeed * Time.deltaTime)),transform.rotation);

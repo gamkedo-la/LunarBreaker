@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour
     public bool isReloading;
     public bool isSprinting;
 
+    //raycast shooting
+    public float damage = 10f;
+    public float range = 100f;
+
     public void Awake()
     {
         instance = this;
@@ -52,20 +56,18 @@ public class PlayerController : MonoBehaviour
 
         //shoots bullet towards crosshair
         RaycastHit hit;
-        if (Physics.Raycast(camTrans.position, camTrans.forward, out hit, 50f))
+        if (Physics.Raycast(camTrans.position, camTrans.forward, out hit, range))
         {
-            //check for upclose
-            if (Vector3.Distance(camTrans.position, hit.point) > 2f)
-            {
-                firePoint.LookAt(hit.point);
-            }
 
+
+            EnemyHealthController enemy = hit.transform.GetComponent<EnemyHealthController>();
+            if(enemy != null)
+            {
+                enemy.DamageEnemy(1);
+            }
         }
-        else
-        {
-            firePoint.LookAt(camTrans.position + (camTrans.forward * 30f));
-        }
-        Instantiate(bullet, firePoint.position, firePoint.rotation);
+        
+            
         
         yield return new WaitForSeconds(0.433f);
         isFiring = false;
@@ -74,8 +76,6 @@ public class PlayerController : MonoBehaviour
         // Update is called once per frame
         void Update()
     {
-        //moveInput.x = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
-        //moveInput.z = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
 
         float yStore = moveInput.y;
 
@@ -173,30 +173,6 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-
-
-        /*
-        if(Input.GetMouseButtonDown(0))
-        {
-            firing = true;
-            //shoots bullet towards crosshair
-            RaycastHit hit;
-            if (Physics.Raycast(camTrans.position,camTrans.forward,out hit, 50f))
-            {
-                //check for upclose
-                if (Vector3.Distance(camTrans.position, hit.point) > 2f)
-                {
-                    firePoint.LookAt(hit.point);
-                }
-                
-            }
-            else
-            {
-                firePoint.LookAt(camTrans.position + (camTrans.forward * 30f));
-            }
-            Instantiate(bullet, firePoint.position, firePoint.rotation);            
-        }
-        */
 
         anim.SetFloat("moveSpeed", moveInput.magnitude, 0.05f, Time.deltaTime);
         anim.SetBool("onGround",canJump);
