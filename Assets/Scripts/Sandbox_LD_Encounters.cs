@@ -20,21 +20,24 @@ public class Script_LDSandbox : MonoBehaviour
     private GameObject curZone;
 
     [SerializeField]
-    private GameObject gameplaySystem;
+    private List<GameObject> enableTheseOnStart;
+    [SerializeField]
+    private List<GameObject> disableTheseOnStart;
     [SerializeField]
     private PlayerController playerController;
     [SerializeField]
-    private GameObject sceneOriginHelper;
+    private GameObject startAtZone;
 
     void Start()
     {
-        // Hide the "Scene origin" helper.
-        sceneOriginHelper.SetActive(false);
-
-        // We have disabled the gameplay objects in the Editor
-        // so that they don't clutter the view when blocking out.
-        // Now, enable them.
-        gameplaySystem.SetActive(true);
+        foreach (var gameObject in enableTheseOnStart)
+        {
+            gameObject.SetActive(true);
+        }
+        foreach (var gameObject in disableTheseOnStart)
+        {
+            gameObject.SetActive(false);
+        }
 
         // Gather zone templates and their corresponding player spawn position+orientation.
         foreach (GameObject maybeZone in SceneManager.GetActiveScene().GetRootGameObjects())
@@ -67,11 +70,9 @@ public class Script_LDSandbox : MonoBehaviour
             zone.SetActive(false);
         }
 
-        // Start on the first zone.
-        if (nbZones > 0)
-        {
-            SwitchToZone(0);
-        }
+        // Start on the specified zone, or the first one if none is specified.
+        curZoneIdx = startAtZone != null ? zoneTemplates.IndexOf(startAtZone) : 0;
+        SwitchToZone(curZoneIdx);
     }
 
     private void Update()
