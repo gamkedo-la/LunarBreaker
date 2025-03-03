@@ -3497,6 +3497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 122281831}
   - component: {fileID: 122281830}
+  - component: {fileID: 122281832}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -3581,6 +3582,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &122281832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122281829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1001 &124460681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4224,6 +4248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 163904336}
   - component: {fileID: 163904335}
+  - component: {fileID: 163904337}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -4308,6 +4333,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 116.87799, y: -208.317, z: -103.16501}
+--- !u!114 &163904337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163904334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!43 &170524049
 Mesh:
   m_ObjectHideFlags: 0
@@ -9971,6 +10019,7 @@ GameObject:
   m_Component:
   - component: {fileID: 452051820}
   - component: {fileID: 452051819}
+  - component: {fileID: 452051821}
   m_Layer: 0
   m_Name: Point Light (2)
   m_TagString: Untagged
@@ -10055,6 +10104,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &452051821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452051818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &452486393
 GameObject:
   m_ObjectHideFlags: 0
@@ -19624,6 +19696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 839716883}
   - component: {fileID: 839716882}
+  - component: {fileID: 839716884}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -19708,6 +19781,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &839716884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839716881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!43 &844134134
 Mesh:
   m_ObjectHideFlags: 0
@@ -19961,6 +20057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 849699022}
   - component: {fileID: 849699021}
+  - component: {fileID: 849699023}
   m_Layer: 0
   m_Name: Point Light (3)
   m_TagString: Untagged
@@ -20045,6 +20142,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &849699023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849699020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!43 &851793123
 Mesh:
   m_ObjectHideFlags: 0
@@ -55793,46 +55913,6 @@ PrefabInstance:
     - target: {fileID: 124737521550235024, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374703857151205741, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.69000024
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374703857151205741, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.6357108
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374703857151205741, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.8561326
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374703857151205741, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7371615
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374703857151205741, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.019039325
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374703857151205741, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.67522323
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374703857151205741, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.017439494
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374703857151205741, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -0.259
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374703857151205741, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 84.985
-      objectReference: {fileID: 0}
-    - target: {fileID: 4374703857151205741, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -2.948
       objectReference: {fileID: 0}
     - target: {fileID: 5586516262926459200, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
       propertyPath: m_Name
