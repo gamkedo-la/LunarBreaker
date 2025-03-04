@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class PlayerController : MonoBehaviour
     public float damage = 10f;
     public float range = 100f;
 
+
+    //vfx
+    public GameObject vfx_muzzleflash;
+
     public void Awake()
     {
         instance = this;
@@ -55,6 +60,8 @@ public class PlayerController : MonoBehaviour
     {
 
         //shoots bullet towards crosshair
+        vfx_muzzleflash.GetComponent<VisualEffect>().Play();
+
         RaycastHit hit;
         if (Physics.Raycast(camTrans.position, camTrans.forward, out hit, range))
         {
