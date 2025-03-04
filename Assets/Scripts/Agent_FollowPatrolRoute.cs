@@ -5,7 +5,7 @@ using UnityEngine;
 public class Agent_FollowPatrolRoute : MonoBehaviour
 {
     public GameObject patrolRoute;
-    private EnemyController agent; // assumed to be on the same game object
+    private Agent_MoveTowardsTarget agent; // assumed to be on the same game object
 
     public bool oneshot = false; // whether to patrol only once
     public bool pingpong = true;
@@ -18,7 +18,7 @@ public class Agent_FollowPatrolRoute : MonoBehaviour
 
     void Start()
     {
-        agent = gameObject.GetComponent<EnemyController>();
+        agent = gameObject.GetComponent<Agent_MoveTowardsTarget>();
         if (patrolRoute == null || agent == null) { return; }
 
         // gather waypoints

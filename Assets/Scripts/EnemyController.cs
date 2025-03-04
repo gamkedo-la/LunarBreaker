@@ -1,51 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.Rendering;
 
 public class EnemyController : MonoBehaviour
 {
+
+    public float moveSpeed;
     public Rigidbody rigidbody;
-    public float moveSpeed = 1f;
-    public float distanceToConsiderWaypointReached = 2f;
-    public Transform positionTarget;
+    private bool chasing;
+    public float distanceToChase = 10f, distanceToLose = 15f;
+    private Vector3 targetPoint;
+    public Transform debugSphere;
 
-    public UnityEvent JustReachedTarget;
 
-    private bool reachedPosTarget = false;
 
+
+    // Start is called before the first frame update
     void Start()
     {
+        
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (positionTarget != null)
+
+        targetPoint = debugSphere.transform.position;
+        targetPoint.y = transform.position.y;
+
+        if (!chasing)
         {
-            // check whether we still need to approach
-            Vector3 posTargetWithOurHeight = positionTarget.position;
-            posTargetWithOurHeight.y = transform.position.y;
-            float dist = Vector3.Distance(transform.position, posTargetWithOurHeight);
-            bool hadPreviouslyReached = reachedPosTarget;
-            reachedPosTarget = dist <= distanceToConsiderWaypointReached;
-
-            // move towards the waypoint
-            if (!reachedPosTarget)
+            if(Vector3.Distance(transform.position,targetPoint) < distanceToChase)
             {
-                transform.LookAt(posTargetWithOurHeight);
-                rigidbody.velocity = transform.forward * moveSpeed;
-            }
-
-            if(!hadPreviouslyReached && reachedPosTarget)
-            {
-                JustReachedTarget.Invoke();
+                chasing = true;
             }
         }
-        // stay still when waypoint is reached or no waypoint is set
-        if(reachedPosTarget || positionTarget == null)
+        else
         {
-            rigidbody.velocity = Vector3.zero;
+
+            transform.LookAt(targetPoint);
+
+
+            rigidbody.velocity = transform.forward * moveSpeed;
+
+            if(Vector3.Distance(transform.position,targetPoint) > distanceToLose)
+            {
+                chasing = false;
+            }
         }
+
+
     }
 }
