@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed, gravityModifier, jumpPower, runSpeed;
     public CharacterController charCon;
-    private Vector3 moveInput;
+    public Vector3 moveInput;
 
     public Transform camTrans;
 
@@ -36,6 +36,10 @@ public class PlayerController : MonoBehaviour
 
     //vfx
     public GameObject vfx_muzzleflash;
+
+
+    //gun 
+    public Transform mac10;
 
     public void Awake()
     {
@@ -152,6 +156,7 @@ public class PlayerController : MonoBehaviour
         {
             mouseInput.y = -mouseInput.y;
         }
+        Mathf.Clamp(mouseInput.x,-90.0f, 90.0f);
 
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x, transform.rotation.eulerAngles.z);
         camTrans.rotation = Quaternion.Euler(camTrans.rotation.eulerAngles + new Vector3(-mouseInput.y,0f,0f));
@@ -165,10 +170,7 @@ public class PlayerController : MonoBehaviour
                 StartCoroutine(Shoot());
             }
 
-
-
         }
-
 
         if (Input.GetKeyDown(KeyCode.R))
         {

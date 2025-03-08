@@ -304,6 +304,7 @@ MonoBehaviour:
   damage: 10
   range: 100
   vfx_muzzleflash: {fileID: 3443181894063104856}
+  mac10: {fileID: 0}
 --- !u!1 &1900513880788156429
 GameObject:
   m_ObjectHideFlags: 0
