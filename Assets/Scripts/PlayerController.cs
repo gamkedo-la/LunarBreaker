@@ -36,6 +36,10 @@ public class PlayerController : MonoBehaviour
 
     //vfx
     public GameObject vfx_muzzleflash;
+    public GameObject vfx_bullet_hole;
+
+    //audio
+    public AudioSource singleGunShotSound;
 
 
     //gun 
@@ -62,7 +66,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Shoot()
     {
-
+        singleGunShotSound.Play();
         //shoots bullet towards crosshair
         vfx_muzzleflash.GetComponent<VisualEffect>().Play();
 
@@ -70,12 +74,23 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(camTrans.position, camTrans.forward, out hit, range))
         {
 
+            
 
             EnemyHealthController enemy = hit.transform.GetComponent<EnemyHealthController>();
-            if(enemy != null)
+            if (enemy != null)
             {
                 enemy.DamageEnemy(1);
             }
+            else if (hit.transform.gameObject.layer == 6)
+            {
+                Instantiate(vfx_bullet_hole, hit.point + new Vector3(0.1f,0.1f,0.1f), Quaternion.FromToRotation(Vector3.up,hit.normal));
+            }
+            else
+            {
+
+            }
+
+
         }
         
             

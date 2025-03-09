@@ -304,6 +304,8 @@ MonoBehaviour:
   damage: 10
   range: 100
   vfx_muzzleflash: {fileID: 3443181894063104856}
+  vfx_bullet_hole: {fileID: 1339841112295660804, guid: b651f1557c816814fac255ae4d8bc382, type: 3}
+  shootGunAudio: {fileID: 0}
   mac10: {fileID: 0}
 --- !u!1 &1900513880788156429
 GameObject:
@@ -623,7 +625,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 823
+    m_Bits: 887
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -785,7 +787,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 7572042c054b1904488530121ef02836, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
