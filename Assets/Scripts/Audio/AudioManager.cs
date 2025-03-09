@@ -1,38 +1,57 @@
-using UnityEngine.Audio;
-using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public Sound[] sounds;
+
+    public AudioClip[] gunshotClips;
+
+    public static AudioManager Instance { get; private set; }
+
+    private AudioSource ASfootsteps;
+
 
     // Start is called before the first frame update
     void Awake()
     {
-        foreach (Sound s in sounds)
+        if (Instance != null)
         {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
-            
-            s.source.volume = 1;
-            s.source.pitch = s.pitch;
+            Debug.LogError("Cannot add duplicate static AudioManager");
+            return;
+        }
 
-            if (s.mixerGroup != null)
-            {
-                s.source.outputAudioMixerGroup = s.mixerGroup;
-            }                    
-
-            s.source.playOnAwake = false;
-        }        
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
-    public void PlaySound (string name)
+    void Start()
     {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s.source.isPlaying)
-        {
-            s.source.Stop();
-        }        
-        s.source.Play();
+     
     }
+
+public void PlayGunshot(GameObject caller)
+{
+    if (gunshotClips == null || gunshotClips.Length == 0)
+    {
+        Debug.LogWarning("Tried to play clip from empty gunshotClips array");
+        return;
+    }
+
+    if (caller == null)
+    {
+        Debug.LogWarning("Caller GameObject is null!");
+        return;
+    }
+
+    // Get or add an AudioSource to the calling object
+    AudioSource callerAudio = caller.GetComponent<AudioSource>();
+    if (callerAudio == null)
+    {
+        callerAudio = caller.AddComponent<AudioSource>();
+    }
+
+    int i = Random.Range(0, gunshotClips.Length);
+    callerAudio.PlayOneShot(gunshotClips[i]); // Play sound on the caller    
+}
 }
