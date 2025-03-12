@@ -305,7 +305,7 @@ MonoBehaviour:
   range: 100
   vfx_muzzleflash: {fileID: 3443181894063104856}
   vfx_bullet_hole: {fileID: 1339841112295660804, guid: b651f1557c816814fac255ae4d8bc382, type: 3}
-  shootGunAudio: {fileID: 0}
+  singleGunShotSound: {fileID: 0}
   mac10: {fileID: 0}
 --- !u!1 &1900513880788156429
 GameObject:
@@ -682,8 +682,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
