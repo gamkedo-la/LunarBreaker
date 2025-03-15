@@ -39,7 +39,8 @@ public class PlayerController : MonoBehaviour
     public GameObject vfx_bullet_hole;
 
     //audio
-    public AudioSource singleGunShotSound;
+    public AudioManager audioManager;
+
 
 
     //gun 
@@ -66,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        singleGunShotSound.Play();
+        audioManager.PlayGunshot(this.transform.parent.gameObject);
         //shoots bullet towards crosshair
         vfx_muzzleflash.GetComponent<VisualEffect>().Play();
 
