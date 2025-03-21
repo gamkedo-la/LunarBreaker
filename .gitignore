@@ -77,3 +77,6 @@ Assets/Plugins/FMOD/Resources/FMODStudioCache.asset
 Logs
 
 /_ReaperProjects
+Assets/Scenes/(temp).unity
+Assets/Scenes/(temp).unity.meta
+ProjectSettings/Packages/com.unity.probuilder/Settings.json
