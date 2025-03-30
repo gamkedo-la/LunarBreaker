@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public bool invertX;
     public bool invertY;
 
-    private bool canJump,canDoubleJump;
+    private bool canJump, canDoubleJump;
     public Transform groundCheckPoint;
     public LayerMask whatIsGround;
 
@@ -46,9 +46,13 @@ public class PlayerController : MonoBehaviour
     //gun 
     public Transform mac10;
 
+    public GameObject mac10Holder;
+    public GameObject nagantRevolverHolder;
+
     public void Awake()
     {
         instance = this;
+
     }
 
     // Start is called before the first frame update
@@ -67,7 +71,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        audioManager.PlayGunshot(this.transform.parent.gameObject);
+        //audioManager.PlayGunshot(this.transform.parent.gameObject);
         //shoots bullet towards crosshair
         vfx_muzzleflash.GetComponent<VisualEffect>().Play();
 
@@ -75,7 +79,7 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(camTrans.position, camTrans.forward, out hit, range))
         {
 
-            
+
 
             EnemyHealthController enemy = hit.transform.GetComponent<EnemyHealthController>();
             if (enemy != null)
@@ -84,7 +88,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (hit.transform.gameObject.layer == 6)
             {
-                Instantiate(vfx_bullet_hole, hit.point + new Vector3(0.1f,0.1f,0.1f), Quaternion.FromToRotation(Vector3.up,hit.normal));
+                Instantiate(vfx_bullet_hole, hit.point + new Vector3(0.1f, 0.1f, 0.1f), Quaternion.FromToRotation(Vector3.up, hit.normal));
             }
             else
             {
@@ -93,24 +97,36 @@ public class PlayerController : MonoBehaviour
 
 
         }
-        
-            
-        
+
+
+
         yield return new WaitForSeconds(0.433f);
         isFiring = false;
     }
 
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
     {
+
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            mac10Holder.SetActive(true);
+            nagantRevolverHolder.SetActive(false);
+        }
+
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            mac10Holder.SetActive(false);
+            nagantRevolverHolder.SetActive(true);
+        }
 
         float yStore = moveInput.y;
 
-		// instant stop
+        // instant stop
         // Vector3 vertMove = transform.forward * Input.GetAxisRaw("Vertical");
         // Vector3 horiMove = transform.right * Input.GetAxisRaw("Horizontal");
         // smooth decel stop
-		Vector3 vertMove = transform.forward * Input.GetAxisRaw("Vertical");
+        Vector3 vertMove = transform.forward * Input.GetAxisRaw("Vertical");
         Vector3 horiMove = transform.right * Input.GetAxisRaw("Horizontal");
 
         moveInput = horiMove + vertMove;
@@ -130,7 +146,7 @@ public class PlayerController : MonoBehaviour
         moveInput.y = yStore;
 
         moveInput.y += Physics.gravity.y * gravityModifier * Time.deltaTime;
-        
+
 
         if (charCon.isGrounded)
         {
@@ -141,7 +157,7 @@ public class PlayerController : MonoBehaviour
         canJump = Physics.OverlapSphere(groundCheckPoint.position, .25f, whatIsGround).Length > 0;
 
 
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (canJump)
             {
@@ -164,7 +180,7 @@ public class PlayerController : MonoBehaviour
 
         Vector2 mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * mouseSensitivity;
 
-        if(invertX)
+        if (invertX)
         {
             mouseInput.x = -mouseInput.x;
         }
@@ -172,10 +188,10 @@ public class PlayerController : MonoBehaviour
         {
             mouseInput.y = -mouseInput.y;
         }
-        Mathf.Clamp(mouseInput.x,-90.0f, 90.0f);
+        Mathf.Clamp(mouseInput.x, -90.0f, 90.0f);
 
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x, transform.rotation.eulerAngles.z);
-        camTrans.rotation = Quaternion.Euler(camTrans.rotation.eulerAngles + new Vector3(-mouseInput.y,0f,0f));
+        camTrans.rotation = Quaternion.Euler(camTrans.rotation.eulerAngles + new Vector3(-mouseInput.y, 0f, 0f));
 
         // Shooting
         if (Input.GetMouseButtonDown(0))
@@ -200,7 +216,7 @@ public class PlayerController : MonoBehaviour
         }
 
         anim.SetFloat("moveSpeed", moveInput.magnitude, 0.05f, Time.deltaTime);
-        anim.SetBool("onGround",canJump);
+        anim.SetBool("onGround", canJump);
         anim.SetBool("isFiring", isFiring);
         anim.SetBool("isReloading", isReloading);
         anim.SetBool("isSprinting", isSprinting);
@@ -211,7 +227,7 @@ public class PlayerController : MonoBehaviour
     {
         charCon.enabled = false;
         charCon.transform.position = position;
-        if(rotation != null)
+        if (rotation != null)
         {
             charCon.transform.rotation = rotation;
         }

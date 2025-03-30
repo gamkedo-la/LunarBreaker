@@ -17,8 +17,8 @@ MonoBehaviour:
     position:
       serializedVersion: 2
       x: 339
-      y: -250
-      width: 1091
+      y: -248
+      width: 1093
       height: 1974
     contents:
     - model: {fileID: 8926484042661614583}
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661614611}
-  m_UIPosition: {x: 943, y: -191}
+  m_UIPosition: {x: 943, y: -189}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -1803,7 +1803,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614637}
       inputSlot: {fileID: 8926484042661614662}
-    position: {x: 463, y: 1338}
+    position: {x: 463.33334, y: 1338}
     expandedSlots:
     - {fileID: 8926484042661614637}
     expanded: 1
