@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b6aea636afbb74c8c402f8e315769a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
-  maxdist: 2000
+  speed: 80
+  maxdist: 1600
   totalDist: 0
   startPos: {x: 0, y: 0, z: 0}
 --- !u!222 &5909906084136122065
@@ -158,10 +158,31 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "====== TOP SECRET ======\r\n\r\nCodename: Lunarbreaker\r\n\r\nLocation:
-    Moon Base Delta\r\n\r\nTarget: Haxxor Terran Global Defense\r\n\r\nMission Objectives:\r\n\r\n-
-    Infiltrate HTGD headquarters\r\n\n- Hack mainframe computer\r\n\n- Deliver intel
-    to elevator\r"
+  m_text: '====== TOP SECRET ======
+
+
+
+    Codename: Lunarbreaker
+
+    Location:
+    Moon Base Delta
+
+    Haxxor Terran Global Defense
+
+
+
+    Mission Objectives:
+
+
+
+    1.
+    Infiltrate HTGD headquarters
+
+
+    2. Destroy mainframe computer
+
+
+    3. Escape'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
