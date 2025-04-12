@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
 using UnityEngine.VFX;
 
@@ -49,10 +50,13 @@ public class PlayerController : MonoBehaviour
     public GameObject mac10Holder;
     public GameObject nagantRevolverHolder;
 
+    // Health
+    PlayerHealth playerHealth;
+
     public void Awake()
     {
         instance = this;
-
+        playerHealth = GetComponent<PlayerHealth>();
     }
 
     // Start is called before the first frame update
@@ -107,6 +111,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerHealth.IsDead()) return;
 
         if (Input.GetKey(KeyCode.Alpha1))
         {
