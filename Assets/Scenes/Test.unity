@@ -4240,17 +4240,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3831506616611354398, guid: dec8a4bf9789a8244a48b39576c4d7f7, type: 3}
   m_PrefabInstance: {fileID: 160479465}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &163010310 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2628726173536861081, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-  m_PrefabInstance: {fileID: 8238931967033285609}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &163904334
 GameObject:
   m_ObjectHideFlags: 0
@@ -4369,11 +4358,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!4 &168392982 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4882812405490806366, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-  m_PrefabInstance: {fileID: 8238931967033285609}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &170524049
 Mesh:
   m_ObjectHideFlags: 0
@@ -4800,7 +4784,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b97f020c32d24021b236d8ed437d646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 4
 --- !u!43 &205643097
 Mesh:
   m_ObjectHideFlags: 0
@@ -44946,50 +44930,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1081525188988225372, guid: 732338e82a0882a4db4dd33192bb12b9, type: 3}
   m_PrefabInstance: {fileID: 1598393533}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1601360956
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1601360957}
-  - component: {fileID: 1601360958}
-  m_Layer: 0
-  m_Name: LevelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1601360957
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601360956}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 168392982}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1601360958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1601360956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dda9aa427d754139b42f45c8c140cef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1606284554
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56888,19 +56828,12 @@ PrefabInstance:
       propertyPath: nagantRevolverHolder
       value: 
       objectReference: {fileID: 1314303535}
-    - target: {fileID: 8906827107066425125, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-      propertyPath: healthSlider
-      value: 
-      objectReference: {fileID: 163010310}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 681718446474281138, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1314303536}
-    - targetCorrespondingSourceObject: {fileID: 4882812405490806366, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1601360957}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1841139256857792182, guid: 58ac98b21ce5a7a4d81ae97ddeb0210b, type: 3}
       insertIndex: 3

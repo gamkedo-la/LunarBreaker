@@ -14,10 +14,6 @@ public class PlayerHealth : MonoBehaviour
 
     LevelManager levelManager;
 
-    void Awake()
-    {
-        levelManager = FindObjectOfType<LevelManager>();
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         healthSlider.value = currentHealth / maxHealth;
         isDead = false;
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     public void GetDamage(float damage)
@@ -41,13 +38,7 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         isDead = true;
-        StartCoroutine(ReloadSceneAfterTime());
-    }
-
-    private IEnumerator ReloadSceneAfterTime()
-    {
-        yield return new WaitForSeconds(timeBeforeReloadAfterDeath);
-        levelManager.ReloadCurrentScene();
+        levelManager.ReloadCurrentSceneAfterTime(timeBeforeReloadAfterDeath);
     }
 
     public bool IsDead()
