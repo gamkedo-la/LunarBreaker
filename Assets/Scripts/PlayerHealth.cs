@@ -8,6 +8,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] float maxHealth = 10;
     [SerializeField] Slider healthSlider;
     [SerializeField] float timeBeforeReloadAfterDeath = 2.0f;
+    [SerializeField] Image healthBar;
+    [SerializeField] Color fullHealthColor = Color.green;
+    [SerializeField] Color midHealthColor = Color.blue;
+    [SerializeField] Color lowHealthColor = Color.red;
 
     float currentHealth = 10;
     bool isDead = false;
@@ -22,16 +26,45 @@ public class PlayerHealth : MonoBehaviour
         healthSlider.value = currentHealth / maxHealth;
         isDead = false;
         levelManager = FindObjectOfType<LevelManager>();
+        healthBar.color = fullHealthColor;
     }
 
     public void GetDamage(float damage)
     {
         currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
         healthSlider.value = currentHealth / maxHealth;
+
+        if (healthSlider.value <= 0.25)
+        {
+            healthBar.color = lowHealthColor;
+        }
+        else if (healthSlider.value <= 0.5)
+        {
+            healthBar.color = midHealthColor;
+        }
 
         if (currentHealth <= 0)
         {
             Die();
+        }
+    }
+
+    public void GetHealth(float health)
+    {
+        currentHealth += health;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        healthSlider.value = currentHealth / maxHealth;
+
+        if (healthSlider.value > 0.5)
+        {
+            healthBar.color = fullHealthColor;
+        }
+        else if (healthSlider.value > 0.25)
+        {
+            healthBar.color = midHealthColor;
         }
     }
 

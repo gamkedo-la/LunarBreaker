@@ -552,6 +552,10 @@ MonoBehaviour:
   maxHealth: 10
   healthSlider: {fileID: 2628726173536861081}
   timeBeforeReloadAfterDeath: 2
+  healthBar: {fileID: 2913834151169973143}
+  fullHealthColor: {r: 0.4, g: 0.8, b: 0.40784314, a: 0.2}
+  midHealthColor: {r: 0.8, g: 0.62666667, b: 0.4, a: 0.2}
+  lowHealthColor: {r: 0.8, g: 0.4, b: 0.4, a: 0.2}
 --- !u!136 &6742383560542438047
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6897,7 +6901,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6667403601309271685, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
       propertyPath: m_Color.b
-      value: 0.17125508
+      value: 0.3019608
       objectReference: {fileID: 0}
     - target: {fileID: 6667403601309271685, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
       propertyPath: m_Color.g
@@ -6905,7 +6909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6667403601309271685, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
       propertyPath: m_Color.r
-      value: 0.1509804
+      value: 0.3019608
       objectReference: {fileID: 0}
     - target: {fileID: 6667403601309271685, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
       propertyPath: m_RaycastTarget
@@ -6970,6 +6974,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5727691003257323050, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
   m_PrefabInstance: {fileID: 7580862122775149454}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2913834151169973143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4703065706476511257, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
+  m_PrefabInstance: {fileID: 7580862122775149454}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7232685399132464804 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 966876318942108970, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
