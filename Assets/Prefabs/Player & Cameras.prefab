@@ -556,6 +556,7 @@ MonoBehaviour:
   fullHealthColor: {r: 0.4, g: 0.8, b: 0.40784314, a: 0.2}
   midHealthColor: {r: 0.8, g: 0.62666667, b: 0.4, a: 0.2}
   lowHealthColor: {r: 0.8, g: 0.4, b: 0.4, a: 0.2}
+  gunAnimator: {fileID: 1080905053473426013}
 --- !u!136 &6742383560542438047
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6857,7 +6858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5727691003257323050, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00091552734
+      value: -0.0008544922
       objectReference: {fileID: 0}
     - target: {fileID: 5902608410255877057, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
       propertyPath: m_Pivot.x

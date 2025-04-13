@@ -12,11 +12,14 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Color fullHealthColor = Color.green;
     [SerializeField] Color midHealthColor = Color.blue;
     [SerializeField] Color lowHealthColor = Color.red;
+    [SerializeField] Animator gunAnimator;
 
     float currentHealth = 10;
     bool isDead = false;
 
     LevelManager levelManager;
+
+
 
 
     // Start is called before the first frame update
@@ -72,6 +75,7 @@ public class PlayerHealth : MonoBehaviour
     {
         isDead = true;
         levelManager.ReloadCurrentSceneAfterTime(timeBeforeReloadAfterDeath);
+        gunAnimator.SetTrigger("isDead");
     }
 
     public bool IsDead()
