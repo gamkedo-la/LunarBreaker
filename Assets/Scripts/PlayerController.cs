@@ -36,7 +36,8 @@ public class PlayerController : MonoBehaviour
 
 
     //vfx
-    public GameObject vfx_muzzleflash;
+    public GameObject vfx_muzzleflash_m10;
+    public GameObject vfx_muzzleflash_rev;
     public GameObject vfx_bullet_hole;
     public GameObject vfx_bullet_spark;
 
@@ -45,7 +46,8 @@ public class PlayerController : MonoBehaviour
 
 
 
-    //gun 
+    //gun
+    private bool usingMac10 = true;
     public Transform mac10;
 
     public GameObject mac10Holder;
@@ -78,7 +80,12 @@ public class PlayerController : MonoBehaviour
     {
         //audioManager.PlayGunshot(this.transform.parent.gameObject);
         //shoots bullet towards crosshair
-        vfx_muzzleflash.GetComponent<VisualEffect>().Play();
+        if(usingMac10)
+        {
+            vfx_muzzleflash_m10.GetComponent<VisualEffect>().Play();
+        } else {
+            vfx_muzzleflash_rev.GetComponent<VisualEffect>().Play();
+        }
 
         RaycastHit hit;
         if (Physics.Raycast(camTrans.position, camTrans.forward, out hit, range))
@@ -107,6 +114,13 @@ public class PlayerController : MonoBehaviour
         isFiring = false;
     }
 
+    void SetGunMac10(bool equipMac10)
+    {
+        usingMac10 = equipMac10;
+        mac10Holder.SetActive(usingMac10);
+        nagantRevolverHolder.SetActive(!usingMac10);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -114,14 +128,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Alpha1))
         {
-            mac10Holder.SetActive(true);
-            nagantRevolverHolder.SetActive(false);
+            SetGunMac10(true);
         }
 
         if (Input.GetKey(KeyCode.Alpha2))
         {
-            mac10Holder.SetActive(false);
-            nagantRevolverHolder.SetActive(true);
+            SetGunMac10(false);
         }
 
         float yStore = moveInput.y;
