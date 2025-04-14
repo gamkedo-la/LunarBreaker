@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.VFX;
 
 public class PlayerController : MonoBehaviour
@@ -14,7 +15,8 @@ public class PlayerController : MonoBehaviour
 
     public Transform camTrans;
     public RectTransform aimCursor;
-    public Camera UICamera; // for aim tracking
+    public Camera UICamera;
+    public Canvas UICanvas;
 
     public float mouseSensitivity;
     public bool invertX;
@@ -142,8 +144,14 @@ public class PlayerController : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(gunBarrel.position, gunBarrel.forward, out hit, range))
         {
-            aimCursor.position = UICamera.WorldToScreenPoint(hit.point);
-            Debug.Log(aimCursor.position.z);
+            Vector3 world2Screen = UICamera.WorldToScreenPoint(hit.point);
+            Vector2 aimCoord;
+            RectTransform canvasRect = UICanvas.GetComponent<RectTransform>();
+
+            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, world2Screen, UICamera, out aimCoord))
+            {
+                aimCursor.localPosition = aimCoord;
+            }
         }
 
         if (Input.GetKey(KeyCode.Alpha1))

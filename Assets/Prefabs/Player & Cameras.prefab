@@ -421,6 +421,7 @@ MonoBehaviour:
   camTrans: {fileID: 681718446474281138}
   aimCursor: {fileID: 3968281718437901618}
   UICamera: {fileID: 6735431137555310492}
+  UICanvas: {fileID: 1090042410650561177}
   mouseSensitivity: 2
   invertX: 0
   invertY: 0
@@ -7081,6 +7082,11 @@ PrefabInstance:
 --- !u!224 &433620912680555887 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8011945532706041569, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
+  m_PrefabInstance: {fileID: 7580862122775149454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &1090042410650561177 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 7355568015210320151, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
   m_PrefabInstance: {fileID: 7580862122775149454}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &2628726173536861081 stripped
