@@ -440,7 +440,8 @@ MonoBehaviour:
   vfx_bullet_hole: {fileID: 1339841112295660804, guid: b651f1557c816814fac255ae4d8bc382, type: 3}
   vfx_bullet_spark: {fileID: 1843941139584758538, guid: a8439ad62134048beb83f3614d276957, type: 3}
   audioManager: {fileID: 0}
-  mac10: {fileID: 0}
+  mac10Barrel: {fileID: 5841232082428619032}
+  nagentBarrel: {fileID: 6485583336459821818}
   mac10Holder: {fileID: 958345227958325800}
   nagantRevolverHolder: {fileID: 7957503425754790568}
 --- !u!82 &6814831741844929267

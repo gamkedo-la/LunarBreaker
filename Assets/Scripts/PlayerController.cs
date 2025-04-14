@@ -48,7 +48,8 @@ public class PlayerController : MonoBehaviour
 
     //gun
     private bool usingMac10 = true;
-    public Transform mac10;
+    public Transform mac10Barrel;
+    public Transform nagentBarrel;
 
     public GameObject mac10Holder;
     public GameObject nagantRevolverHolder;
@@ -78,21 +79,20 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Shoot()
     {
+        Transform gunBarrel;
         //audioManager.PlayGunshot(this.transform.parent.gameObject);
-        //shoots bullet towards crosshair
         if(usingMac10)
         {
             vfx_muzzleflash_m10.GetComponent<VisualEffect>().Play();
+            gunBarrel = mac10Barrel;
         } else {
             vfx_muzzleflash_rev.GetComponent<VisualEffect>().Play();
+            gunBarrel = nagentBarrel;
         }
 
         RaycastHit hit;
-        if (Physics.Raycast(camTrans.position, camTrans.forward, out hit, range))
+        if (Physics.Raycast(gunBarrel.position, gunBarrel.forward, out hit, range))
         {
-
-
-
             EnemyHealthController enemy = hit.transform.GetComponent<EnemyHealthController>();
             if (enemy != null)
             {
