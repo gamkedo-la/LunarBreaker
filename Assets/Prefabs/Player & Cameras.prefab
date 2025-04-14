@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5174790451393736575}
   m_Layer: 0
   m_Name: Gun Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -372,7 +372,6 @@ Transform:
   - {fileID: 1405314561110518167}
   - {fileID: 681718446474281138}
   - {fileID: 8295112642159678125}
-  - {fileID: 7232685399132464804}
   m_Father: {fileID: 124737521550235024}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!143 &3223946782064117019
@@ -420,6 +419,8 @@ MonoBehaviour:
   charCon: {fileID: 3223946782064117019}
   moveInput: {x: 0, y: 0, z: 0}
   camTrans: {fileID: 681718446474281138}
+  aimCursor: {fileID: 3968281718437901618}
+  UICamera: {fileID: 6735431137555310492}
   mouseSensitivity: 2
   invertX: 0
   invertY: 0
@@ -1180,6 +1181,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7232685399132464804}
   - {fileID: 7181607575888211322}
   - {fileID: 9066499970841643586}
   - {fileID: 2231139842437885804}
@@ -6816,7 +6818,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7181607575888211322}
+    m_TransformParent: {fileID: 124737521550235024}
     m_Modifications:
     - target: {fileID: 966876318942108970, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
       propertyPath: m_Pivot.x
@@ -7038,6 +7040,10 @@ PrefabInstance:
       propertyPath: m_PixelsPerUnitMultiplier
       value: 21.72
       objectReference: {fileID: 0}
+    - target: {fileID: 6885248809960548210, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
+      propertyPath: m_Name
+      value: AimCursor
+      objectReference: {fileID: 0}
     - target: {fileID: 7355568015210320151, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
       propertyPath: m_Camera
       value: 
@@ -7104,6 +7110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &3968281718437901618 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6784262573879660220, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
+  m_PrefabInstance: {fileID: 7580862122775149454}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7232685399132464804 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 966876318942108970, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}

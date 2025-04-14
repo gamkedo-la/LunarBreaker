@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public Vector3 moveInput;
 
     public Transform camTrans;
+    public RectTransform aimCursor;
+    public Camera UICamera; // for aim tracking
 
     public float mouseSensitivity;
     public bool invertX;
@@ -77,19 +79,29 @@ public class PlayerController : MonoBehaviour
         isReloading = false;
     }
 
+    Transform currentGunTransform()
+    {
+        if (usingMac10)
+        {
+            return mac10Barrel;
+        }
+        else
+        {
+            return nagentBarrel;
+        }
+    }
+
     IEnumerator Shoot()
     {
-        Transform gunBarrel;
         //audioManager.PlayGunshot(this.transform.parent.gameObject);
-        if(usingMac10)
+        if (usingMac10)
         {
             vfx_muzzleflash_m10.GetComponent<VisualEffect>().Play();
-            gunBarrel = mac10Barrel;
         } else {
             vfx_muzzleflash_rev.GetComponent<VisualEffect>().Play();
-            gunBarrel = nagentBarrel;
         }
 
+        Transform gunBarrel = currentGunTransform();
         RaycastHit hit;
         if (Physics.Raycast(gunBarrel.position, gunBarrel.forward, out hit, range))
         {
@@ -125,6 +137,14 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (playerHealth.IsDead()) return;
+
+        Transform gunBarrel = currentGunTransform();
+        RaycastHit hit;
+        if (Physics.Raycast(gunBarrel.position, gunBarrel.forward, out hit, range))
+        {
+            aimCursor.position = UICamera.WorldToScreenPoint(hit.point);
+            Debug.Log(aimCursor.position.z);
+        }
 
         if (Input.GetKey(KeyCode.Alpha1))
         {
