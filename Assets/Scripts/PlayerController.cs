@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     public Transform camTrans;
     public RectTransform aimCursor;
     public Camera UICamera;
-    public Canvas UICanvas;
 
     public float mouseSensitivity;
     public bool invertX;
@@ -135,24 +134,22 @@ public class PlayerController : MonoBehaviour
         nagantRevolverHolder.SetActive(!usingMac10);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate() // for using Lerp predictably
     {
-        if (playerHealth.IsDead()) return;
 
         Transform gunBarrel = currentGunTransform();
         RaycastHit hit;
         if (Physics.Raycast(gunBarrel.position, gunBarrel.forward, out hit, range))
         {
             Vector3 world2Screen = UICamera.WorldToScreenPoint(hit.point);
-            Vector2 aimCoord;
-            RectTransform canvasRect = UICanvas.GetComponent<RectTransform>();
-
-            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, world2Screen, UICamera, out aimCoord))
-            {
-                aimCursor.localPosition = aimCoord;
-            }
+            aimCursor.position = Vector3.Lerp(aimCursor.position, world2Screen, 0.7f);
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (playerHealth.IsDead()) return;
 
         if (Input.GetKey(KeyCode.Alpha1))
         {
