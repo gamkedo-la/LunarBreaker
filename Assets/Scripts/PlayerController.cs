@@ -139,11 +139,15 @@ public class PlayerController : MonoBehaviour
 
         Transform gunBarrel = currentGunTransform();
         RaycastHit hit;
+        Vector3 world2Screen;
         if (Physics.Raycast(gunBarrel.position, gunBarrel.forward, out hit, range))
         {
-            Vector3 world2Screen = UICamera.WorldToScreenPoint(hit.point);
-            aimCursor.position = Vector3.Lerp(aimCursor.position, world2Screen, 0.7f);
+            world2Screen = UICamera.WorldToScreenPoint(hit.point);
+        } else
+        {
+            world2Screen = UICamera.WorldToScreenPoint(gunBarrel.position + gunBarrel.forward*10.0f);
         }
+        aimCursor.position = Vector3.Lerp(aimCursor.position, world2Screen, 0.8f);
     }
 
     // Update is called once per frame
