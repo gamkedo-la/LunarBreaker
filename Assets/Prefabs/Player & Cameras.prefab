@@ -997,6 +997,7 @@ MonoBehaviour:
   swayAmount: 40
   swaySmoothing: 0.1
   playerController: {fileID: 7906727227735138229}
+  gunBreathingMovement: 2
 --- !u!1 &4766928884791323505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1258,6 +1259,7 @@ MonoBehaviour:
   swayAmount: 20
   swaySmoothing: 0.04
   playerController: {fileID: 7906727227735138229}
+  gunBreathingMovement: 1
 --- !u!1 &6341271550652364420
 GameObject:
   m_ObjectHideFlags: 0
@@ -6707,6 +6709,7 @@ MonoBehaviour:
   swayAmount: 40
   swaySmoothing: 0.1
   playerController: {fileID: 7906727227735138229}
+  gunBreathingMovement: 1
 --- !u!4 &919341688240447977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
