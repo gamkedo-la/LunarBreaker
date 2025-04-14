@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     //vfx
     public GameObject vfx_muzzleflash;
     public GameObject vfx_bullet_hole;
+    public GameObject vfx_bullet_spark;
 
     //audio
     public AudioManager audioManager;
@@ -93,12 +94,10 @@ public class PlayerController : MonoBehaviour
             else if (hit.transform.gameObject.layer == 6)
             {
                 Instantiate(vfx_bullet_hole, hit.point + new Vector3(0.1f, 0.1f, 0.1f), Quaternion.FromToRotation(Vector3.up, hit.normal));
-            }
-            else
+            } else
             {
-
+                Instantiate(vfx_bullet_spark, hit.point + new Vector3(0.1f, 0.1f, 0.1f), Quaternion.FromToRotation(Vector3.up, hit.normal));
             }
-
 
         }
 
