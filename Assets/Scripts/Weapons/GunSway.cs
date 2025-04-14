@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Mac10Controller : MonoBehaviour
+public class GunSway : MonoBehaviour
 {
-    public float swayAmount;
-    public float swaySmoothing;
+    public float swayAmount = 20f;
+    public float swaySmoothing = 0.04f;
     public PlayerController playerController;
 
     private Quaternion initialRotation;
@@ -16,20 +16,20 @@ public class Mac10Controller : MonoBehaviour
         initialRotation = transform.localRotation;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Get raw mouse input
         Vector2 mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * playerController.mouseSensitivity;
 
         // Apply sway amount multiplier
         float swayX = mouseInput.x * swayAmount;
-        float swayY = -mouseInput.y * swayAmount; // Negative to match typical FPS controls
+        float swayY = mouseInput.y * swayAmount;
 
         // Calculate target rotation with both axes considered
         Quaternion targetRotation = initialRotation * Quaternion.Euler(swayY, swayX, 0);
 
         // Smooth the rotation
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, swaySmoothing * Time.deltaTime);
+        transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, swaySmoothing);
 
     }
 }
