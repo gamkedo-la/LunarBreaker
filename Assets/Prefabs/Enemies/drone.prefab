@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef0d477e4c21500428ff436725e52b0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damagePrefabEffect: {fileID: 1843941139584758538, guid: 8dda8077878fd4e118f6a2e0e40d7b1b, type: 3}
   deathPrefabEffect: {fileID: 8712472107653629073, guid: 2e281df8e067c40618faf6eddbd3e702, type: 3}
   currentHealth: 3
 --- !u!114 &8896769507348330393

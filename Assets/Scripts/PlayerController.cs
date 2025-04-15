@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     public GameObject vfx_muzzleflash_rev;
     public GameObject vfx_bullet_hole;
     public GameObject vfx_bullet_spark;
+    public GameObject damagePrefabEffect;
 
     //audio
     public AudioManager audioManager;
@@ -109,7 +110,8 @@ public class PlayerController : MonoBehaviour
             EnemyHealthController enemy = hit.transform.GetComponent<EnemyHealthController>();
             if (enemy != null)
             {
-                enemy.DamageEnemy(1);
+                enemy.DamageEnemy(usingMac10 ? 1 : 3);
+                Instantiate(damagePrefabEffect, hit.point + new Vector3(0.1f, 0.1f, 0.1f), Quaternion.FromToRotation(Vector3.up, hit.normal));
             }
             else if (hit.transform.gameObject.layer == 6)
             {
