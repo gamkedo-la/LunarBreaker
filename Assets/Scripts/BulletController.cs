@@ -30,7 +30,17 @@ public class BulletController : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision coll)
+    {
+        PlayerHealth phScript = coll.gameObject.GetComponent<PlayerHealth>();
+        if(phScript)
+        {
+            phScript.GetDamage(1.0f);
+        }
+
+    }
+
+        private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
         //moves particle effect back slightly towards the player so that the effect doesn't go inside of the object it is hitting

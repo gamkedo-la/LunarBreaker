@@ -20,9 +20,12 @@ public class EnemyController : MonoBehaviour
     private bool sleeping = false;
     private float wanderRange = 10.0f;
     public NavMeshAgent agent;
+    public GameObject bullet;
+    public Transform muzzleLoc;
 
     public GameObject searchCone;
     public GameObject seeYouLight;
+
 
     Quaternion nervousSearchFacing;
 
@@ -36,6 +39,7 @@ public class EnemyController : MonoBehaviour
             playerTransform = GameObject.Find("Player").transform;
         }
         StartCoroutine(SwitchStrafeOrSearchDir());
+        StartCoroutine(FireRound());
         UpdateLightMode();
     }
 
@@ -55,11 +59,22 @@ public class EnemyController : MonoBehaviour
             }
             else
             {
-                Vector3 randomPoint = PickNearbyGoal(wanderRange);
-                agent.SetDestination(randomPoint);
+                agent.SetDestination(PickNearbyGoal(wanderRange));
                 // nervousSearchFacing *= Quaternion.AngleAxis(Random.RandomRange(-55.0f, 55.0f), Vector3.up);
             }
             yield return new WaitForSeconds( Random.Range(1.5f,4.0f) );
+        }
+    }
+
+    IEnumerator FireRound()
+    {
+        while(true)
+        {
+            if(chasing)
+            {
+                GameObject.Instantiate(bullet, muzzleLoc.position, muzzleLoc.rotation);
+            }
+            yield return new WaitForSeconds(0.3f);
         }
     }
 
@@ -93,6 +108,7 @@ public class EnemyController : MonoBehaviour
             chasing = false;
             rigidbody.isKinematic = true;
             agent.enabled = true;
+            agent.SetDestination(PickNearbyGoal(wanderRange));
             UpdateLightMode();
         }
         else
@@ -145,7 +161,7 @@ public class EnemyController : MonoBehaviour
         }*/
 
         targetPoint = playerTransform.position;
-        targetPoint.y = transform.position.y;
+        // targetPoint.y = transform.position.y;
 
         if (!chasing)
         {
@@ -174,11 +190,13 @@ public class EnemyController : MonoBehaviour
             if(Physics.Raycast(transform.position, Vector3.down, out rhInfo))
             {
                 float hoverDist = Vector3.Distance(transform.position, rhInfo.point);
-                if (hoverDist < 5.5f)
+                float hoverMin = 4.5f;
+                float hoverMax = 7.0f;
+                if (hoverDist < hoverMin)
                 {
                     rigidbody.velocity += transform.up * 2.0f;
                 }
-                else if (hoverDist > 7.5f)
+                else if (hoverDist > hoverMax)
                 {
                     rigidbody.velocity += transform.up * -2.0f;
                 }
