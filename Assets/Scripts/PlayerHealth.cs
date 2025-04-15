@@ -35,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
     public void GetDamage(float damage)
     {
         currentHealth -= damage;
+        Debug.Log("player hit for " + damage + " now " + currentHealth);
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         healthSlider.value = currentHealth / maxHealth;

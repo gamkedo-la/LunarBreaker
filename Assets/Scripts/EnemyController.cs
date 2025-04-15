@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     private float sleepDistance = 220.0f;
     private bool sleeping = false;
     private float wanderRange = 10.0f;
+    private float sprayFireAng = 2.0f;
     public NavMeshAgent agent;
     public GameObject bullet;
     public Transform muzzleLoc;
@@ -72,7 +73,10 @@ public class EnemyController : MonoBehaviour
         {
             if(chasing)
             {
-                GameObject.Instantiate(bullet, muzzleLoc.position, muzzleLoc.rotation);
+                Quaternion fireDir = muzzleLoc.rotation;
+                fireDir *= Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), muzzleLoc.up);
+                fireDir *= Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), muzzleLoc.right);
+                GameObject.Instantiate(bullet, muzzleLoc.position, fireDir);
             }
             yield return new WaitForSeconds(0.3f);
         }

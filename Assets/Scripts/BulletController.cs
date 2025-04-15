@@ -37,14 +37,8 @@ public class BulletController : MonoBehaviour
         {
             phScript.GetDamage(1.0f);
         }
-
-    }
-
-        private void OnTriggerEnter(Collider other)
-    {
         Destroy(gameObject);
-        //moves particle effect back slightly towards the player so that the effect doesn't go inside of the object it is hitting
-        Instantiate(impactFX,transform.position + (transform.forward *(-moveSpeed * Time.deltaTime)),transform.rotation);
+        Instantiate(impactFX, transform.position + (transform.forward * (-moveSpeed * Time.deltaTime)), transform.rotation);
     }
 
 }
