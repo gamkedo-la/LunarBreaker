@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealthController : MonoBehaviour
 {
-
+    public GameObject deathPrefabEffect;
     public int currentHealth = 5;
 
     // Start is called before the first frame update
@@ -25,6 +25,7 @@ public class EnemyHealthController : MonoBehaviour
 
         if(currentHealth <= 0)
         {
+            Instantiate(deathPrefabEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
