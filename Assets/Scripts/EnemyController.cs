@@ -187,7 +187,9 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            musicController.CombatMusicBump(); // keep refreshing time until after combat/escape
+            if(musicController) {
+                musicController.CombatMusicBump(); // keep refreshing time until after combat/escape
+            }
             if (Vector3.Distance(transform.position, targetPoint) > distanceToStop + distRandomOffset)
             {
                 rigidbody.velocity = transform.forward * moveSpeed;

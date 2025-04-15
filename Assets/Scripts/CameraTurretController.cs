@@ -41,7 +41,11 @@ public class CameraTurretController : MonoBehaviour
         }
         if(musicController == null)
         {
-            musicController = GameObject.Find("Music").GetComponent<MusicFader>();
+            GameObject musicGO = GameObject.Find("Music");
+            if(musicGO)
+            {
+                musicController = musicGO.GetComponent<MusicFader>();
+            }
         }
         
         StartCoroutine(SwitchStrafeOrSearchDir());
@@ -139,6 +143,8 @@ public class CameraTurretController : MonoBehaviour
                 if (chasing==false && LineOfSightToPlayer())
                 {
                     chasing = true;
+
+                    UpdateLightMode();
                 }
             }
         }
@@ -155,6 +161,8 @@ public class CameraTurretController : MonoBehaviour
                 if(chasing)
                 {
                     chasing = false;
+
+                    UpdateLightMode();
                 }
             }
         }
