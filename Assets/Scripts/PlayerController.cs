@@ -70,6 +70,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("9 KEY TELEPORTS TO END OR TEST AREA - delete TeleportTest gameobject for release");
+
         isFiring = false;
         isReloading = false;
         isSprinting = false;

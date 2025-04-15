@@ -16,7 +16,8 @@ public class EnemyController : MonoBehaviour
     private float strafeSpeed = 5.0f;
     private float distRandomOffset;
     private float viewAngle = 25.0f; // should roughly match light cone
-
+    private float sleepDistance = 220.0f;
+    private bool sleeping = false;
     private float wanderRange = 10.0f;
     public NavMeshAgent agent;
 
@@ -29,7 +30,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         nervousSearchFacing = transform.rotation;
-        distRandomOffset = Random.RandomRange(0.0f,7.0f);
+        distRandomOffset = Random.Range(0.0f,7.0f);
         if (playerTransform == null)
         {
             playerTransform = GameObject.Find("Player").transform;
@@ -48,7 +49,7 @@ public class EnemyController : MonoBehaviour
     {
         while(true)
         {
-            if (chasing)
+            if (chasing || sleeping)
             {
                 strafeCW = !strafeCW;
             }
@@ -68,11 +69,6 @@ public class EnemyController : MonoBehaviour
         {
             transform.rotation = Quaternion.Slerp(transform.rotation,
                 Quaternion.LookRotation(targetPoint - transform.position), 0.1f);
-        }
-        else
-        {
-            /*transform.rotation = Quaternion.Slerp(transform.rotation,
-                            nervousSearchFacing, 0.07f);*/
         }
     }
 
@@ -103,7 +99,10 @@ public class EnemyController : MonoBehaviour
         {
             chasing = true;
             rigidbody.isKinematic = false;
-            agent.ResetPath();
+            if(agent.enabled)
+            {
+                agent.ResetPath();
+            }
             agent.enabled = false;
             UpdateLightMode();
         }
@@ -119,9 +118,32 @@ public class EnemyController : MonoBehaviour
         return rhInfo.collider.gameObject == gameObject;
     }
 
+    public void DamageAlert()
+    {
+        chasing = true;
+        UseNavMesh(false);
+        UpdateLightMode();
+    }
+
     // Update is called once per frame
     void Update()
         {
+        /* // not sure this is working yet, leaving out until tested
+        float distFromPlayer = Vector3.Distance(transform.position, playerTransform.position);
+        if (distFromPlayer > sleepDistance)
+        {
+            if(sleeping==false)
+            {
+                chasing = false; // turn off particles
+                UpdateLightMode();
+            }
+            sleeping = true;
+            return;
+        } else if(sleeping)
+        {
+            UseNavMesh(true);
+        }*/
+
         targetPoint = playerTransform.position;
         targetPoint.y = transform.position.y;
 
@@ -146,6 +168,23 @@ public class EnemyController : MonoBehaviour
             {
                 rigidbody.velocity = (strafeCW ? -1.0f : 1.0f)*transform.right * strafeSpeed;
             }
+
+            RaycastHit rhInfo;
+
+            if(Physics.Raycast(transform.position, Vector3.down, out rhInfo))
+            {
+                float hoverDist = Vector3.Distance(transform.position, rhInfo.point);
+                if (hoverDist < 5.5f)
+                {
+                    rigidbody.velocity += transform.up * 2.0f;
+                }
+                else if (hoverDist > 7.5f)
+                {
+                    rigidbody.velocity += transform.up * -2.0f;
+                }
+            }
+
+
 
             if (Vector3.Distance(transform.position,targetPoint) > distanceToLose + distRandomOffset ||
                 LineOfSightToPlayer() == false)

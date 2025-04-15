@@ -6,17 +6,11 @@ public class EnemyHealthController : MonoBehaviour
 {
     public GameObject deathPrefabEffect;
     public int currentHealth = 5;
+    private EnemyController myController;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        myController = GetComponent<EnemyController>();
     }
 
     public void DamageEnemy(int damageAmount)
@@ -27,6 +21,9 @@ public class EnemyHealthController : MonoBehaviour
         {
             Instantiate(deathPrefabEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
+        } else
+        {
+            myController.DamageAlert();
         }
     }
 
