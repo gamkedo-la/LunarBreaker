@@ -97,38 +97,52 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        //audioManager.PlayGunshot(this.transform.parent.gameObject);
-        if (usingMac10)
+        do
         {
-            vfx_muzzleflash_m10.GetComponent<VisualEffect>().Play();
-        } else {
-            vfx_muzzleflash_rev.GetComponent<VisualEffect>().Play();
-        }
-
-        Transform gunBarrel = currentGunTransform();
-        RaycastHit hit;
-        if (Physics.Raycast(gunBarrel.position, gunBarrel.forward, out hit, range))
-        {
-            EnemyHealthController enemy = hit.transform.GetComponent<EnemyHealthController>();
-            if (enemy != null)
+            isFiring = true;
+            //audioManager.PlayGunshot(this.transform.parent.gameObject);
+            if (usingMac10)
             {
-                enemy.DamageEnemy(usingMac10 ? 1 : 3);
-                Instantiate(damagePrefabEffect, hit.point + new Vector3(0.1f, 0.1f, 0.1f), Quaternion.FromToRotation(Vector3.up, hit.normal));
+                vfx_muzzleflash_m10.GetComponent<VisualEffect>().Play();
             }
-            else if (hit.transform.gameObject.layer == 6)
+            else
             {
-                Instantiate(vfx_bullet_hole, hit.point + new Vector3(0.1f, 0.1f, 0.1f), Quaternion.FromToRotation(Vector3.up, hit.normal));
-            } else
-            {
-                Instantiate(vfx_bullet_spark, hit.point + new Vector3(0.1f, 0.1f, 0.1f), Quaternion.FromToRotation(Vector3.up, hit.normal));
+                vfx_muzzleflash_rev.GetComponent<VisualEffect>().Play();
             }
 
-        }
+            Transform gunBarrel = currentGunTransform();
+            RaycastHit hit;
 
+            Quaternion fireSprayDir = Quaternion.identity;
+            if (usingMac10) {
+                float sprayFireAng = 7.0f;
+                fireSprayDir = Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), Vector3.up)
+                    * Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), Vector3.right);
+            }
 
+            if (Physics.Raycast(gunBarrel.position, fireSprayDir * gunBarrel.forward, out hit, range))
+            {
+                EnemyHealthController enemy = hit.transform.GetComponent<EnemyHealthController>();
+                if (enemy != null)
+                {
+                    enemy.DamageEnemy(usingMac10 ? 1 : 5);
+                    Instantiate(damagePrefabEffect, hit.point + new Vector3(0.1f, 0.1f, 0.1f), Quaternion.FromToRotation(Vector3.up, hit.normal));
+                }
+                else if (hit.transform.gameObject.layer == 6)
+                {
+                    Instantiate(vfx_bullet_hole, hit.point + new Vector3(0.1f, 0.1f, 0.1f), Quaternion.FromToRotation(Vector3.up, hit.normal));
+                }
+                else
+                {
+                    Instantiate(vfx_bullet_spark, hit.point + new Vector3(0.1f, 0.1f, 0.1f), Quaternion.FromToRotation(Vector3.up, hit.normal));
+                }
 
-        yield return new WaitForSeconds(0.433f);
-        isFiring = false;
+            }
+
+            yield return new WaitForSeconds(usingMac10 ? 0.15f : 0.6f);
+            isFiring = false;
+            yield return new WaitForSeconds(0.05f);
+        } while (Input.GetMouseButton(0) && usingMac10);
     }
 
     void SetGunMac10(bool equipMac10)
@@ -260,7 +274,6 @@ public class PlayerController : MonoBehaviour
         {
             if (!isFiring)
             {
-                isFiring = true;
                 StartCoroutine(Shoot());
             }
 

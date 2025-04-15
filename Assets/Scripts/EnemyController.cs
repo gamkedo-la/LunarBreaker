@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     private float distanceToStop = 7f, distanceToChase = 32f, distanceToLose = 45f;
     private Vector3 targetPoint;
     private static Transform playerTransform;
+    private static MusicFader musicController;
     private bool strafeCW = false;
     private float moveSpeed = 6.0f;
     private float strafeSpeed = 5.0f;
@@ -39,6 +40,11 @@ public class EnemyController : MonoBehaviour
         {
             playerTransform = GameObject.Find("Player").transform;
         }
+        if(musicController == null)
+        {
+            musicController = GameObject.Find("Music").GetComponent<MusicFader>();
+        }
+        
         StartCoroutine(SwitchStrafeOrSearchDir());
         StartCoroutine(FireRound());
         UpdateLightMode();
@@ -181,6 +187,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
+            musicController.CombatMusicBump(); // keep refreshing time until after combat/escape
             if (Vector3.Distance(transform.position, targetPoint) > distanceToStop + distRandomOffset)
             {
                 rigidbody.velocity = transform.forward * moveSpeed;
