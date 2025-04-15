@@ -7,20 +7,34 @@ public class EnemyController : MonoBehaviour
 
     public Rigidbody rigidbody;
     private bool chasing;
-    private float distanceToStop = 10f, distanceToChase = 25f, distanceToLose = 40f;
+    private float distanceToStop = 7f, distanceToChase = 32f, distanceToLose = 45f;
     private Vector3 targetPoint;
-    public Transform playerTransform;
+    private static Transform playerTransform;
     private bool strafeCW = false;
     private float moveSpeed = 6.0f;
     private float strafeSpeed = 5.0f;
+    private float distRandomOffset;
+    private float viewAngle = 25.0f; // should roughly match light cone
 
-
+    public GameObject searchCone;
+    public GameObject seeYouLight;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerTransform = GameObject.Find("Player").transform;
+        distRandomOffset = Random.RandomRange(0.0f,7.0f);
+        if (playerTransform == null)
+        {
+            playerTransform = GameObject.Find("Player").transform;
+        }
         StartCoroutine(SwitchStrafeDir());
+        UpdateLightMode();
+    }
+
+    void UpdateLightMode()
+    {
+        searchCone.SetActive(!chasing);
+        seeYouLight.SetActive(chasing);
     }
 
     IEnumerator SwitchStrafeDir()
@@ -32,26 +46,37 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate() // since slerp uses % it isn't linear
+    {
+        if(chasing)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.LookRotation(targetPoint - transform.position), 0.2f);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-
         targetPoint = playerTransform.position;
         targetPoint.y = transform.position.y;
 
         if (!chasing)
         {
-            if (Vector3.Distance(transform.position, targetPoint) < distanceToChase)
+            if (Vector3.Distance(transform.position, targetPoint) < distanceToChase + distRandomOffset &&
+                Quaternion.Angle(transform.rotation,
+                        Quaternion.LookRotation(playerTransform.position-transform.position))<viewAngle)
             {
-                chasing = true;
+                if (chasing==false)
+                {
+                    chasing = true;
+                    UpdateLightMode();
+                }
             }
         }
         else
         {
-
-            transform.LookAt(targetPoint);
-
-            if (Vector3.Distance(transform.position, targetPoint) > distanceToStop)
+            if (Vector3.Distance(transform.position, targetPoint) > distanceToStop + distRandomOffset)
             {
                 rigidbody.velocity = transform.forward * moveSpeed;
             } else
@@ -59,9 +84,13 @@ public class EnemyController : MonoBehaviour
                 rigidbody.velocity = (strafeCW ? -1.0f : 1.0f)*transform.right * strafeSpeed;
             }
 
-            if(Vector3.Distance(transform.position,targetPoint) > distanceToLose)
+            if(Vector3.Distance(transform.position,targetPoint) > distanceToLose + distRandomOffset)
             {
-                chasing = false;
+                if(chasing)
+                {
+                    chasing = false;
+                    UpdateLightMode();
+                }
             }
         }
 
