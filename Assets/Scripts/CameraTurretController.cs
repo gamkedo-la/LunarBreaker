@@ -4,21 +4,15 @@ using UnityEngine;
 
 public class CameraTurretController : MonoBehaviour
 {
-
-    public Rigidbody rigidbody;
     private bool chasing;
-    private float distanceToStop = 7f, distanceToChase = 32f, distanceToLose = 45f;
+    private float distanceToChase = 32f, distanceToLose = 45f;
     private Vector3 targetPoint;
     private static Transform playerTransform;
     private static MusicFader musicController;
     private bool strafeCW = false;
-    private float moveSpeed = 6.0f;
-    private float strafeSpeed = 5.0f;
     private float distRandomOffset;
     private float viewAngle = 25.0f; // should roughly match light cone
-    private float sleepDistance = 220.0f;
     private bool sleeping = false;
-    private float wanderRange = 10.0f;
     private float sprayFireAng = 2.0f;
 
     public GameObject bullet;

@@ -5,8 +5,6 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-
-    public Rigidbody rigidbody;
     private bool chasing;
     private float distanceToStop = 7f, distanceToChase = 32f, distanceToLose = 45f;
     private Vector3 targetPoint;
@@ -17,7 +15,7 @@ public class EnemyController : MonoBehaviour
     private float strafeSpeed = 5.0f;
     private float distRandomOffset;
     private float viewAngle = 25.0f; // should roughly match light cone
-    private float sleepDistance = 220.0f;
+    // private float sleepDistance = 220.0f;
     private bool sleeping = false;
     private float wanderRange = 10.0f;
     private float sprayFireAng = 2.0f;
@@ -116,7 +114,7 @@ public class EnemyController : MonoBehaviour
         if (useNav)
         {
             chasing = false;
-            rigidbody.isKinematic = true;
+            GetComponent<Rigidbody>().isKinematic = true;
             agent.enabled = true;
             agent.SetDestination(PickNearbyGoal(wanderRange));
             UpdateLightMode();
@@ -124,7 +122,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             chasing = true;
-            rigidbody.isKinematic = false;
+            GetComponent<Rigidbody>().isKinematic = false;
             if(agent.enabled)
             {
                 agent.ResetPath();
@@ -192,10 +190,10 @@ public class EnemyController : MonoBehaviour
             }
             if (Vector3.Distance(transform.position, targetPoint) > distanceToStop + distRandomOffset)
             {
-                rigidbody.velocity = transform.forward * moveSpeed;
+                GetComponent<Rigidbody>().velocity = transform.forward * moveSpeed;
             } else
             {
-                rigidbody.velocity = (strafeCW ? -1.0f : 1.0f)*transform.right * strafeSpeed;
+                GetComponent<Rigidbody>().velocity = (strafeCW ? -1.0f : 1.0f)*transform.right * strafeSpeed;
             }
 
             RaycastHit rhInfo;
@@ -207,11 +205,11 @@ public class EnemyController : MonoBehaviour
                 float hoverMax = 7.0f;
                 if (hoverDist < hoverMin)
                 {
-                    rigidbody.velocity += transform.up * 2.0f;
+                    GetComponent<Rigidbody>().velocity += transform.up * 2.0f;
                 }
                 else if (hoverDist > hoverMax)
                 {
-                    rigidbody.velocity += transform.up * -2.0f;
+                    GetComponent<Rigidbody>().velocity += transform.up * -2.0f;
                 }
             }
 

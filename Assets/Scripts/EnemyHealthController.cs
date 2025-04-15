@@ -6,11 +6,14 @@ public class EnemyHealthController : MonoBehaviour
 {
     public GameObject deathPrefabEffect;
     public int currentHealth = 5;
-    private EnemyController myController;
+    private EnemyController myControllerDrone;
+    private CameraTurretController myControllerCamera;
 
     void Start()
     {
-        myController = GetComponent<EnemyController>();
+        myControllerDrone = GetComponent<EnemyController>();
+        // super lazy hack to work for either, should be a separate shared component, will refactor if we get more enemy types -ChrisD
+        myControllerCamera = GetComponent<CameraTurretController>();
     }
 
     public void DamageEnemy(int damageAmount)
@@ -23,7 +26,13 @@ public class EnemyHealthController : MonoBehaviour
             Destroy(gameObject);
         } else
         {
-            myController.DamageAlert();
+            if(myControllerDrone)
+            {
+                myControllerDrone.DamageAlert();
+            } else
+            {
+                myControllerCamera.DamageAlert();
+            }
         }
     }
 
