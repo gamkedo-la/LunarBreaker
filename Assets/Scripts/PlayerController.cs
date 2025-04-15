@@ -167,6 +167,19 @@ public class PlayerController : MonoBehaviour
             SetGunMac10(false);
         }
 
+        if (Input.GetKey(KeyCode.Alpha9))
+        {
+            GameObject gotoGO = GameObject.Find("TeleportTest");
+            CharacterController controller = GetComponent<CharacterController>();
+            if (gotoGO && controller)
+            {
+                controller.enabled = false;
+                transform.position = gotoGO.transform.position;
+                controller.enabled = true;
+            }
+
+        }
+
         float yStore = moveInput.y;
 
         // instant stop
