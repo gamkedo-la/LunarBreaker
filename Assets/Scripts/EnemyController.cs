@@ -19,15 +19,18 @@ public class EnemyController : MonoBehaviour
     public GameObject searchCone;
     public GameObject seeYouLight;
 
+    Quaternion nervousSearchFacing;
+
     // Start is called before the first frame update
     void Start()
     {
+        nervousSearchFacing = transform.rotation;
         distRandomOffset = Random.RandomRange(0.0f,7.0f);
         if (playerTransform == null)
         {
             playerTransform = GameObject.Find("Player").transform;
         }
-        StartCoroutine(SwitchStrafeDir());
+        StartCoroutine(SwitchStrafeOrSearchDir());
         UpdateLightMode();
     }
 
@@ -37,21 +40,27 @@ public class EnemyController : MonoBehaviour
         seeYouLight.SetActive(chasing);
     }
 
-    IEnumerator SwitchStrafeDir()
+    IEnumerator SwitchStrafeOrSearchDir()
     {
         while(true)
         {
             strafeCW = !strafeCW;
+            nervousSearchFacing *= Quaternion.AngleAxis(Random.RandomRange(-55.0f, 55.0f), Vector3.up);
             yield return new WaitForSeconds( Random.RandomRange(1.0f,3.0f) );
         }
     }
 
     private void FixedUpdate() // since slerp uses % it isn't linear
     {
-        if(chasing)
+        if (chasing)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation,
-                Quaternion.LookRotation(targetPoint - transform.position), 0.2f);
+                Quaternion.LookRotation(targetPoint - transform.position), 0.1f);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                            nervousSearchFacing, 0.07f);
         }
     }
 
