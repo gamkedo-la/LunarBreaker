@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class EnemyController : MonoBehaviour
     private float strafeSpeed = 5.0f;
     private float distRandomOffset;
     private float viewAngle = 25.0f; // should roughly match light cone
+
+    private float wanderRange = 10.0f;
+    public NavMeshAgent agent;
 
     public GameObject searchCone;
     public GameObject seeYouLight;
@@ -44,9 +48,17 @@ public class EnemyController : MonoBehaviour
     {
         while(true)
         {
-            strafeCW = !strafeCW;
-            nervousSearchFacing *= Quaternion.AngleAxis(Random.RandomRange(-55.0f, 55.0f), Vector3.up);
-            yield return new WaitForSeconds( Random.RandomRange(1.0f,3.0f) );
+            if (chasing)
+            {
+                strafeCW = !strafeCW;
+            }
+            else
+            {
+                Vector3 randomPoint = PickNearbyGoal(wanderRange);
+                agent.SetDestination(randomPoint);
+                // nervousSearchFacing *= Quaternion.AngleAxis(Random.RandomRange(-55.0f, 55.0f), Vector3.up);
+            }
+            yield return new WaitForSeconds( Random.Range(1.5f,4.0f) );
         }
     }
 
@@ -59,14 +71,57 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            transform.rotation = Quaternion.Slerp(transform.rotation,
-                            nervousSearchFacing, 0.07f);
+            /*transform.rotation = Quaternion.Slerp(transform.rotation,
+                            nervousSearchFacing, 0.07f);*/
         }
+    }
+
+    Vector3 PickNearbyGoal(float radius)
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * radius;
+        randomDirection += transform.position;
+
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomDirection, out hit, radius, NavMesh.AllAreas))
+        {
+            return hit.position;
+        }
+
+        return transform.position;
+    }
+
+    void UseNavMesh(bool useNav)
+    {
+        if (useNav)
+        {
+            chasing = false;
+            rigidbody.isKinematic = true;
+            agent.enabled = true;
+            UpdateLightMode();
+        }
+        else
+        {
+            chasing = true;
+            rigidbody.isKinematic = false;
+            agent.ResetPath();
+            agent.enabled = false;
+            UpdateLightMode();
+        }
+    }
+
+    bool LineOfSightToPlayer()
+    {
+        RaycastHit rhInfo;
+
+        Physics.Raycast(playerTransform.position, transform.position - playerTransform.position,
+                out rhInfo);
+
+        return rhInfo.collider.gameObject == gameObject;
     }
 
     // Update is called once per frame
     void Update()
-    {
+        {
         targetPoint = playerTransform.position;
         targetPoint.y = transform.position.y;
 
@@ -76,10 +131,9 @@ public class EnemyController : MonoBehaviour
                 Quaternion.Angle(transform.rotation,
                         Quaternion.LookRotation(playerTransform.position-transform.position))<viewAngle)
             {
-                if (chasing==false)
+                if (chasing==false && LineOfSightToPlayer())
                 {
-                    chasing = true;
-                    UpdateLightMode();
+                    UseNavMesh(false);
                 }
             }
         }
@@ -93,12 +147,12 @@ public class EnemyController : MonoBehaviour
                 rigidbody.velocity = (strafeCW ? -1.0f : 1.0f)*transform.right * strafeSpeed;
             }
 
-            if(Vector3.Distance(transform.position,targetPoint) > distanceToLose + distRandomOffset)
+            if (Vector3.Distance(transform.position,targetPoint) > distanceToLose + distRandomOffset ||
+                LineOfSightToPlayer() == false)
             {
                 if(chasing)
                 {
-                    chasing = false;
-                    UpdateLightMode();
+                    UseNavMesh(true);
                 }
             }
         }
