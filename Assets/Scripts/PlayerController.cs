@@ -225,6 +225,18 @@ public class PlayerController : MonoBehaviour
         } while (Input.GetMouseButton(0) && usingMac10);
     }
 
+    public void AddAmmoMac10(int howMuch)
+    {
+        Mac10Ammo += howMuch;
+        UpdateAmmoReadout();
+    }
+
+    public void AddAmmoRevolver(int howMuch)
+    {
+        RevolverAmmo += howMuch;
+        UpdateAmmoReadout();
+    }
+
     void SetGunMac10(bool equipMac10)
     {
         usingMac10 = equipMac10;
