@@ -434,6 +434,7 @@ MonoBehaviour:
   isFiring: 0
   isReloading: 1
   isSprinting: 0
+  ammoDisplayText: {fileID: 1347641094642525250}
   damage: 10
   range: 100
   vfx_muzzleflash_m10: {fileID: 3443181894063104856}
@@ -7238,6 +7239,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -0.0008544922
       objectReference: {fileID: 0}
+    - target: {fileID: 5766360974722605833, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
+      propertyPath: m_Name
+      value: Ammo Text (TMP)
+      objectReference: {fileID: 0}
     - target: {fileID: 5902608410255877057, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7353,6 +7358,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8011945532706041569, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
   m_PrefabInstance: {fileID: 7580862122775149454}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1347641094642525250 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8901199187096051660, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
+  m_PrefabInstance: {fileID: 7580862122775149454}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2628726173536861081 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5570879525003608087, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}

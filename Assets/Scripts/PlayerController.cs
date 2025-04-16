@@ -4,6 +4,7 @@ using System.Data.Common;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.VFX;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class PlayerController : MonoBehaviour
     public bool isFiring;
     public bool isReloading;
     public bool isSprinting;
+
+    public TextMeshProUGUI ammoDisplayText;
+    private int Mac10Ammo = 10;
+    private int RevolverAmmo = 4;
 
     //raycast shooting
     public float damage = 10f;
@@ -75,6 +80,8 @@ public class PlayerController : MonoBehaviour
         isFiring = false;
         isReloading = false;
         isSprinting = false;
+
+        UpdateAmmoReadout();
     }
 
     IEnumerator Reloading()
@@ -95,6 +102,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void UpdateAmmoReadout()
+    {
+        ammoDisplayText.text = "1: MAC - 10("+Mac10Ammo+")\n2: Nagant("+RevolverAmmo+")";
+    }
+
     IEnumerator Shoot()
     {
         do
@@ -103,19 +115,32 @@ public class PlayerController : MonoBehaviour
             //audioManager.PlayGunshot(this.transform.parent.gameObject);
             if (usingMac10)
             {
+                if(Mac10Ammo<=0)
+                {
+                    break; // escaping the do-while of this coroutine IEnumerator
+                }
+                Mac10Ammo--;
                 vfx_muzzleflash_m10.GetComponent<VisualEffect>().Play();
             }
             else
             {
+                if (RevolverAmmo <= 0)
+                {
+                    break; // escaping the do-while of this coroutine IEnumerator
+                }
+                RevolverAmmo--;
                 vfx_muzzleflash_rev.GetComponent<VisualEffect>().Play();
             }
+
+
+            UpdateAmmoReadout();
 
             Transform gunBarrel = currentGunTransform();
             RaycastHit hit;
 
             Quaternion fireSprayDir = Quaternion.identity;
             if (usingMac10) {
-                float sprayFireAng = 7.0f;
+                float sprayFireAng = 4.0f;
                 fireSprayDir = Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), Vector3.up)
                     * Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), Vector3.right);
             }
