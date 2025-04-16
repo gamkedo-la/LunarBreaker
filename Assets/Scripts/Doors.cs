@@ -43,7 +43,7 @@ public class Doors : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("opening door");
+            // Debug.Log("opening door");
 			open = true;
         }
     }
@@ -52,7 +52,7 @@ public class Doors : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("closing door");
+            // Debug.Log("closing door");
             open = false;
         }
     }	
