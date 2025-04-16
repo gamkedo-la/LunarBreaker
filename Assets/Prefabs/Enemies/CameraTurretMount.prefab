@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathPrefabEffect: {fileID: 8712472107653629073, guid: 2e281df8e067c40618faf6eddbd3e702, type: 3}
-  currentHealth: 5
+  currentHealth: 3
 --- !u!54 &6437722030655551423
 Rigidbody:
   m_ObjectHideFlags: 0

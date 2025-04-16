@@ -14937,7 +14937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathPrefabEffect: {fileID: 8712472107653629073, guid: 2e281df8e067c40618faf6eddbd3e702, type: 3}
-  currentHealth: 5
+  currentHealth: 4
 --- !u!114 &3526558699301179008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14950,7 +14950,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccaf5e1d6a3b8a843b5e994ef06686d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidbody: {fileID: 5679052108921996923}
   agent: {fileID: 7723669982758695430}
   bullet: {fileID: 3310052128671899595, guid: d1c351e3db3f94dda8e7ae6fcf6ed382, type: 3}
   muzzleLoc: {fileID: 6494995457991597986}

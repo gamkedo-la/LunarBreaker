@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
     public bool isReloading;
     public bool isSprinting;
 
+    private float mac10ReloadTime = 0.15f;
+    private float revolverReloadTime = 0.6f;
+
     public TextMeshProUGUI ammoDisplayText;
     private int Mac10Ammo = 10;
     private int RevolverAmmo = 4;
@@ -109,6 +112,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Shoot()
     {
+        float outOfAmmoShakeTime = 0.3f;
         do
         {
             isFiring = true;
@@ -117,6 +121,23 @@ public class PlayerController : MonoBehaviour
             {
                 if(Mac10Ammo<=0)
                 {
+                    float moveDuringNoMac10AmmoTime = outOfAmmoShakeTime;
+                    Vector3 macLocalPos = mac10Holder.transform.localPosition;
+                    Quaternion macLocalRot = mac10Holder.transform.localRotation;
+                    while (moveDuringNoMac10AmmoTime >= 0.0f)
+                    {
+                        moveDuringNoMac10AmmoTime -= Time.fixedDeltaTime;
+                        float percBack = moveDuringNoMac10AmmoTime / outOfAmmoShakeTime;
+                        if (percBack < 0.0f)
+                        {
+                            percBack = 0.0f;
+                        }
+                        percBack *= percBack * percBack;
+                        mac10Holder.transform.localRotation = macLocalRot * Quaternion.AngleAxis(1.5f * percBack, Vector3.right);
+                        mac10Holder.transform.localPosition = macLocalPos + Vector3.forward * 0.1f * percBack;
+                        yield return new WaitForFixedUpdate();
+                    }
+                    isFiring = false;
                     break; // escaping the do-while of this coroutine IEnumerator
                 }
                 Mac10Ammo--;
@@ -126,6 +147,21 @@ public class PlayerController : MonoBehaviour
             {
                 if (RevolverAmmo <= 0)
                 {
+                    float moveDuringNoRevolverTime = outOfAmmoShakeTime;
+                    while (moveDuringNoRevolverTime >= 0.0f)
+                    {
+                        moveDuringNoRevolverTime -= Time.fixedDeltaTime;
+                        float percBack = moveDuringNoRevolverTime / outOfAmmoShakeTime;
+                        if (percBack < 0.0f)
+                        {
+                            percBack = 0.0f;
+                        }
+                        percBack *= percBack * percBack;
+                        nagantRevolverHolder.transform.localRotation = Quaternion.AngleAxis(1.5f * percBack, Vector3.right);
+                        nagantRevolverHolder.transform.localPosition = Vector3.forward * 0.1f * percBack;
+                        yield return new WaitForFixedUpdate();
+                    }
+                    isFiring = false;
                     break; // escaping the do-while of this coroutine IEnumerator
                 }
                 RevolverAmmo--;
@@ -163,8 +199,27 @@ public class PlayerController : MonoBehaviour
                 }
 
             }
-
-            yield return new WaitForSeconds(usingMac10 ? 0.15f : 0.6f);
+            if(usingMac10)
+            {
+                yield return new WaitForSeconds(mac10ReloadTime);
+            } else
+            {
+                float moveDuringReloadTime = revolverReloadTime;
+                while(moveDuringReloadTime >= 0.0f)
+                {
+                    moveDuringReloadTime -= Time.fixedDeltaTime;
+                    float percBack = moveDuringReloadTime/revolverReloadTime;
+                    if(percBack < 0.0f)
+                    {
+                        percBack = 0.0f;
+                    }
+                    percBack *= percBack * percBack; // simple way to achieve a nonlinear return
+                    nagantRevolverHolder.transform.localRotation = Quaternion.AngleAxis(-7.0f* percBack, Vector3.right);
+                    nagantRevolverHolder.transform.localPosition = Vector3.back * 1.5f * percBack;
+                    yield return new WaitForFixedUpdate();
+                }
+            }
+            
             isFiring = false;
             yield return new WaitForSeconds(0.05f);
         } while (Input.GetMouseButton(0) && usingMac10);
