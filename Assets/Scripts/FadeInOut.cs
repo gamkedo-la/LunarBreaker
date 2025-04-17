@@ -7,9 +7,10 @@ using UnityEngine.UI;
 
 public class FadeInOut : MonoBehaviour
 {
-    [SerializeField] Image fadeImage;
     [SerializeField] float fadeInTime = 0.5f;
     [SerializeField] float fadeOutTime = 1.0f;
+
+    Image fadeImage;
 
     public bool isFadingIn = false;
     public bool isFadingOut = false;
@@ -33,6 +34,11 @@ public class FadeInOut : MonoBehaviour
     public void SetFadeOutTime(float time)
     {
         fadeOutTime = time;
+    }
+
+    public float GetFadeOutTime()
+    {
+        return fadeOutTime;
     }
 
     public void StartFadeOut()

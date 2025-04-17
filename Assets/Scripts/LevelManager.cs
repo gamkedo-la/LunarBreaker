@@ -9,9 +9,20 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] FadeInOut fadeImage;
 
+    public void LoadSceneByNameAfterFadeOut(string sceneName)
+    {
+        fadeImage.StartFadeOut();
+        StartCoroutine(LoadSceneByNameAfterTimeCoroutine(sceneName, fadeImage.GetFadeOutTime()));
+    }
+
     public void ReloadCurrentScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LoadSceneByName(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 
     public void ReloadCurrentSceneAfterTime(float time)
@@ -25,5 +36,10 @@ public class LevelManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         ReloadCurrentScene();
+    }
+    private IEnumerator LoadSceneByNameAfterTimeCoroutine(string sceneName, float time)
+    {
+        yield return new WaitForSeconds(time);
+        LoadSceneByName(sceneName);
     }
 }
