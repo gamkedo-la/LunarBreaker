@@ -1,0 +1,711 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7590638162279848544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1154010446675373918}
+  m_Layer: 0
+  m_Name: ALL TRAPS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1154010446675373918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7590638162279848544}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8469141437711976046}
+  - {fileID: 5828288755257686778}
+  - {fileID: 8721889312805034673}
+  - {fileID: 5984338998850283515}
+  - {fileID: 6744999797421062546}
+  - {fileID: 8612065011348258013}
+  - {fileID: 4922030619834965473}
+  - {fileID: 2041659023781550469}
+  - {fileID: 1641372096209345859}
+  - {fileID: 1413686333018363435}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &464994301752891862
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1154010446675373918}
+    m_Modifications:
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 132.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486768393837533344, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523443173648698881, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_Name
+      value: Laser Tripwire (CEILING)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4593683937365169612, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: magnitudeY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4593683937365169612, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: magnitudeZ
+      value: 2.25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+--- !u!4 &2041659023781550469 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+  m_PrefabInstance: {fileID: 464994301752891862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &700591152156759672
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1154010446675373918}
+    m_Modifications:
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 51.125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -57.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486768393837533344, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523443173648698881, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_Name
+      value: Laser Tripwire (7)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+--- !u!4 &1413686333018363435 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+  m_PrefabInstance: {fileID: 700591152156759672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &928235150552882448
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1154010446675373918}
+    m_Modifications:
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 48.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -57.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486768393837533344, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523443173648698881, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_Name
+      value: Laser Tripwire (6)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+--- !u!4 &1641372096209345859 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+  m_PrefabInstance: {fileID: 928235150552882448}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5169462075821046209
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1154010446675373918}
+    m_Modifications:
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 78.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486768393837533344, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523443173648698881, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_Name
+      value: Laser Tripwire (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+--- !u!4 &6744999797421062546 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+  m_PrefabInstance: {fileID: 5169462075821046209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5272087159577995176
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1154010446675373918}
+    m_Modifications:
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 81.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486768393837533344, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523443173648698881, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_Name
+      value: Laser Tripwire (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+--- !u!4 &5984338998850283515 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+  m_PrefabInstance: {fileID: 5272087159577995176}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5387622869561653929
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1154010446675373918}
+    m_Modifications:
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 86.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486768393837533344, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523443173648698881, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_Name
+      value: Laser Tripwire (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+--- !u!4 &5828288755257686778 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+  m_PrefabInstance: {fileID: 5387622869561653929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6802690602227752370
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1154010446675373918}
+    m_Modifications:
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -57.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486768393837533344, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523443173648698881, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_Name
+      value: Laser Tripwire (8)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+--- !u!4 &4922030619834965473 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+  m_PrefabInstance: {fileID: 6802690602227752370}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7146354803381279458
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1154010446675373918}
+    m_Modifications:
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 83.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -17.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486768393837533344, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523443173648698881, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_Name
+      value: Laser Tripwire (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+--- !u!4 &8721889312805034673 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+  m_PrefabInstance: {fileID: 7146354803381279458}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7900053399730404494
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1154010446675373918}
+    m_Modifications:
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -57.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486768393837533344, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523443173648698881, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_Name
+      value: Laser Tripwire (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+--- !u!4 &8612065011348258013 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+  m_PrefabInstance: {fileID: 7900053399730404494}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8047647271261210173
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1154010446675373918}
+    m_Modifications:
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 62.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 62.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2486768393837533344, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_VersionIndex
+      value: 1345
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523443173648698881, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+      propertyPath: m_Name
+      value: Laser Tripwire
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+--- !u!4 &8469141437711976046 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1884355990740500563, guid: d95196723a99bd449870bb5eadf195e1, type: 3}
+  m_PrefabInstance: {fileID: 8047647271261210173}
+  m_PrefabAsset: {fileID: 0}
