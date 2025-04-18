@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class scrollText : MonoBehaviour
 {
-	public GameObject mainMenu;
+	public GameObject mainMenu; // not defined = not in main menu, overriding to reset game from end screen
 	public float speed = 100f;
 	public float maxdist = 2000; // then destroy self
 	public float totalDist = 0f;
@@ -21,6 +22,11 @@ public class scrollText : MonoBehaviour
 		totalDist = 0.0f;
 	}
 
+	public void RestartGame()
+    {
+		SceneManager.LoadScene("MainMenu");
+	}
+
     // Update is called once per frame
     void Update()
     {
@@ -31,7 +37,13 @@ public class scrollText : MonoBehaviour
 		
 		if (totalDist > maxdist) {
 			transform.parent.gameObject.SetActive(false);
-			mainMenu.SetActive(true);
+			if(mainMenu)
+            {
+				mainMenu.SetActive(true);
+			} else
+            {
+				RestartGame();
+			}
 		}
 	}
 }

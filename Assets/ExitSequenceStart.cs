@@ -36,7 +36,7 @@ public class ExitSequenceStart : MonoBehaviour
             endTimer -= Time.deltaTime;
             if(endTimer < 0.0f)
             {
-                SceneManager.LoadScene(0);
+                SceneManager.LoadScene("StoryEnd");
             }
         }
     }
