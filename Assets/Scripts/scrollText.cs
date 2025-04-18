@@ -14,7 +14,9 @@ public class scrollText : MonoBehaviour
 	// Start is called before the first frame update
     void Start()
     {
-        startPos = transform.position;
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+		startPos = transform.position;
     }
 
 	public void Reset()
