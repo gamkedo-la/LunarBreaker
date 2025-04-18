@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class scrollText : MonoBehaviour
 {
-    
+	public GameObject mainMenu;
 	public float speed = 100f;
 	public float maxdist = 2000; // then destroy self
 	public float totalDist = 0f;
@@ -16,6 +16,11 @@ public class scrollText : MonoBehaviour
         startPos = transform.position;
     }
 
+	public void Reset()
+    {
+		totalDist = 0.0f;
+	}
+
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +30,8 @@ public class scrollText : MonoBehaviour
 		//transform.position.Set(startPos.x,startPos.y+totalDist,startPos.z);
 		
 		if (totalDist > maxdist) {
-			gameObject.SetActive(false);
+			transform.parent.gameObject.SetActive(false);
+			mainMenu.SetActive(true);
 		}
-    }
+	}
 }
