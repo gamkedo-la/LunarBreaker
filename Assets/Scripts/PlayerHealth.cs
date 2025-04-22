@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Color midHealthColor = Color.blue;
     [SerializeField] Color lowHealthColor = Color.red;
     [SerializeField] Animator gunAnimator;
+    [SerializeField] DamageVisualFeedback damageVisualFeedback;
 
     float currentHealth = 10;
     bool isDead = false;
@@ -37,6 +38,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
         Debug.Log("player hit for " + damage + " now " + currentHealth);
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        damageVisualFeedback.ShowImage();
 
         healthSlider.value = currentHealth / maxHealth;
 
