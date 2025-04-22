@@ -20,22 +20,22 @@ public class Doors : MonoBehaviour
 	// Start is called before the first frame update
     void Start()
     {
-        door1startpos = door1.localPosition;
-        door2startpos = door2.localPosition;
+        if (door1) door1startpos = door1.localPosition;
+        if (door2) door2startpos = door2.localPosition;
 		// FIXME: these could orient properly rather than hardcoded X axis
-        door1endpos = new Vector3(door1startpos.x+dist,door1startpos.y,door1startpos.z);
-        door2endpos = new Vector3(door2startpos.x-dist,door2startpos.y,door2startpos.z);
+        if (door1) door1endpos = new Vector3(door1startpos.x+dist,door1startpos.y,door1startpos.z);
+        if (door2) door2endpos = new Vector3(door2startpos.x-dist,door2startpos.y,door2startpos.z);
     }
 
     // Update is called once per frame
     void Update()
     {
         if (open) {
-			door1.localPosition = Vector3.Lerp(door1.localPosition,door1endpos,Time.deltaTime*speed);
-			door2.localPosition = Vector3.Lerp(door2.localPosition,door2endpos,Time.deltaTime*speed);
+			if (door1) door1.localPosition = Vector3.Lerp(door1.localPosition,door1endpos,Time.deltaTime*speed);
+			if (door2) door2.localPosition = Vector3.Lerp(door2.localPosition,door2endpos,Time.deltaTime*speed);
 		} else {
-			door1.localPosition = Vector3.Lerp(door1.localPosition,door1startpos,Time.deltaTime*speed);
-			door2.localPosition = Vector3.Lerp(door2.localPosition,door2startpos,Time.deltaTime*speed);
+			if (door1) door1.localPosition = Vector3.Lerp(door1.localPosition,door1startpos,Time.deltaTime*speed);
+			if (door2) door2.localPosition = Vector3.Lerp(door2.localPosition,door2startpos,Time.deltaTime*speed);
 		}
     }
 	
