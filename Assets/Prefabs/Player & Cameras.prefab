@@ -1401,7 +1401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.5283019, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1429,8 +1429,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88fb37aefd2d46deb5858585e106e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alpha: 0.85
-  timeBeforeFadeOut: 0.5
+  alphaWhenVisisble: 0.85
+  timeBeforeFadeIn: 1
+  timeToFade: 2
 --- !u!1 &6341271550652364420
 GameObject:
   m_ObjectHideFlags: 0
@@ -7430,7 +7431,7 @@ PrefabInstance:
     - {fileID: 7545903087802518192, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 966876318942108970, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
-      insertIndex: -1
+      insertIndex: 3
       addedObject: {fileID: 3684672643664515818}
     - targetCorrespondingSourceObject: {fileID: 966876318942108970, guid: 86e03aef45c99084c94aa8da672ca458, type: 3}
       insertIndex: -1
