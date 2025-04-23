@@ -11,6 +11,11 @@ public class Doors : MonoBehaviour
 	public float speed = 2.0f;
 	public float dist = 2.0f;
 	
+	public AudioClip openSound;
+	public AudioClip closeSound;
+	private AudioSource sfx;
+	
+	
 	bool open = false;
 	Vector3 door1startpos;
 	Vector3 door2startpos;
@@ -20,7 +25,8 @@ public class Doors : MonoBehaviour
 	// Start is called before the first frame update
     void Start()
     {
-        if (door1) door1startpos = door1.localPosition;
+        sfx = GetComponent<AudioSource>();
+		if (door1) door1startpos = door1.localPosition;
         if (door2) door2startpos = door2.localPosition;
 		// FIXME: these could orient properly rather than hardcoded X axis
         if (door1) door1endpos = new Vector3(door1startpos.x+dist,door1startpos.y,door1startpos.z);
@@ -45,6 +51,10 @@ public class Doors : MonoBehaviour
         {
             // Debug.Log("opening door");
 			open = true;
+			if (openSound && sfx) {
+				sfx.clip = openSound;
+				sfx.Play();
+			}
         }
     }
 
@@ -54,6 +64,10 @@ public class Doors : MonoBehaviour
         {
             // Debug.Log("closing door");
             open = false;
+			if (closeSound && sfx) {
+				sfx.clip = closeSound;
+				sfx.Play();
+			}
         }
     }	
 }
