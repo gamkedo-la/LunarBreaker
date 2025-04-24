@@ -335,6 +335,37 @@ Transform:
   - {fileID: 2475314828182709754}
   m_Father: {fileID: 3911929948269458617}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1663758390733618495
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6090510093967333239}
+  m_Layer: 0
+  m_Name: ShellEjectingPort
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6090510093967333239
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663758390733618495}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.28234872, y: 0.09353951, z: -0.009740976, w: 0.95469093}
+  m_LocalPosition: {x: 0.15, y: 0.21, z: 0.094}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4374703857151205741}
+  m_LocalEulerAnglesHint: {x: -32.499, y: 12.608, z: -4.858}
 --- !u!1 &1841139256857792182
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,8 +476,10 @@ MonoBehaviour:
   audioManager: {fileID: 0}
   mac10Barrel: {fileID: 5841232082428619032}
   nagentBarrel: {fileID: 6485583336459821818}
+  mac10ShellPort: {fileID: 6090510093967333239}
   mac10Holder: {fileID: 958345227958325800}
   nagantRevolverHolder: {fileID: 7957503425754790568}
+  mac10ShellPrefab: {fileID: 309496892652258288, guid: 64175794249364c27a567606242fb601, type: 3}
 --- !u!82 &6814831741844929267
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1302,6 +1335,7 @@ Transform:
   - {fileID: 3911929948269458617}
   - {fileID: 5841232082428619032}
   - {fileID: 5131832516408118390}
+  - {fileID: 6090510093967333239}
   m_Father: {fileID: 7092050796364902832}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1080905053473426013

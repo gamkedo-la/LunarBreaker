@@ -62,9 +62,11 @@ public class PlayerController : MonoBehaviour
     private bool usingMac10 = true;
     public Transform mac10Barrel;
     public Transform nagentBarrel;
+    public Transform mac10ShellPort;
 
     public GameObject mac10Holder;
     public GameObject nagantRevolverHolder;
+    public GameObject mac10ShellPrefab;
 
     // Health
     PlayerHealth playerHealth;
@@ -179,6 +181,16 @@ public class PlayerController : MonoBehaviour
                 float sprayFireAng = 3.0f;
                 fireSprayDir = Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), Vector3.up)
                     * Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), Vector3.right);
+
+                float sprayShellAng = 5.0f;
+                Quaternion shellSprayDir = Quaternion.AngleAxis(Random.Range(-sprayShellAng, sprayShellAng), Vector3.up)
+                    * Quaternion.AngleAxis(Random.Range(-sprayShellAng, sprayShellAng), Vector3.right);
+
+                GameObject shellGO = Instantiate(mac10ShellPrefab, mac10ShellPort.position, mac10ShellPort.rotation);
+                Rigidbody shellRB = shellGO.GetComponent<Rigidbody>();
+                float randForceMin = 175.0f;
+                float randForceMax = 220.0f;
+                shellRB.AddForce(shellSprayDir * mac10ShellPort.forward * Random.Range(randForceMin, randForceMax));
             }
 
             if (Physics.Raycast(gunBarrel.position, fireSprayDir * gunBarrel.forward, out hit, range))
