@@ -15,6 +15,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Animator gunAnimator;
     [SerializeField] DamageVisualFeedback damageVisualFeedback;
 
+    private float timeBeforeNextDamage = 0.0f;
+    private float timeBeforeNextDamageDelay = 0.4f;
+
     float currentHealth = 10;
     bool isDead = false;
 
@@ -33,8 +36,21 @@ public class PlayerHealth : MonoBehaviour
         healthBar.color = fullHealthColor;
     }
 
+    private void Update()
+    {
+        if(timeBeforeNextDamage > 0.0f)
+        {
+            timeBeforeNextDamage -= Time.deltaTime;
+        }
+    }
+
     public void GetDamage(float damage)
     {
+        if(timeBeforeNextDamage > 0.0f)
+        {
+            return;
+        }
+        timeBeforeNextDamage = timeBeforeNextDamageDelay;
         currentHealth -= damage;
         Debug.Log("player hit for " + damage + " now " + currentHealth);
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
