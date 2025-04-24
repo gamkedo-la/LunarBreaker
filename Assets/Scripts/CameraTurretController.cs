@@ -30,6 +30,7 @@ public class CameraTurretController : MonoBehaviour
 
     public GameObject searchCone;
     public GameObject seeYouLight;
+    public GameObject blinkLight;
 
     Quaternion nervousSearchFacing;
 
@@ -56,6 +57,7 @@ public class CameraTurretController : MonoBehaviour
         }
 
         StartCoroutine(FireRound());
+        StartCoroutine(BlinkLightTimer());
         UpdateLightMode();
     }
 
@@ -63,6 +65,24 @@ public class CameraTurretController : MonoBehaviour
     {
         searchCone.SetActive(!chasing);
         seeYouLight.SetActive(chasing);
+    }
+
+    IEnumerator BlinkLightTimer()
+    {
+        float blinkTimeOn = 0.25f;
+        float blinkTimeOff = 0.85f;
+
+        // get cameras blinking out of sync
+        blinkLight.SetActive(false);
+        yield return new WaitForSeconds(Random.Range(0.0f, blinkTimeOff));
+
+        while (true)
+        {
+            blinkLight.SetActive(true);
+            yield return new WaitForSeconds(blinkTimeOn);
+            blinkLight.SetActive(false);
+            yield return new WaitForSeconds(blinkTimeOff);
+        }
     }
 
     IEnumerator FireRound()
