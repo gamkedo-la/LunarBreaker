@@ -15,6 +15,7 @@ public class CameraTurretController : MonoBehaviour
 
     public Transform scanEdgeA;
     public Transform scanEdgeB;
+    public GameObject cameraModel;
     private bool scanningTowardA = false;
     private float scanProgressPerc = 0.0f;
     private float scanProgressWaiting = 0.0f;
@@ -35,10 +36,9 @@ public class CameraTurretController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cameraModel.SetActive(true);
         scanEdgeA.gameObject.SetActive(false);
         scanEdgeB.gameObject.SetActive(false);
-        MeshRenderer rend = GetComponent<MeshRenderer>();
-        rend.enabled = true;
 
         nervousSearchFacing = transform.rotation;
         distRandomOffset = Random.Range(0.0f, 7.0f);
