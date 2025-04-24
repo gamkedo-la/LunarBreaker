@@ -5,7 +5,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
-    public AudioClip[] gunshotClips;
+    public AudioClip[] gunshotClipsMac10;
+    public AudioClip[] gunshotClipsRevolver;
 
     public static AudioManager Instance { get; private set; }
 
@@ -30,8 +31,10 @@ public class AudioManager : MonoBehaviour
      
     }
 
-public void PlayGunshot(GameObject caller)
+public void PlayGunshot(bool usingMac10, GameObject caller)
 {
+    AudioClip[] gunshotClips = (usingMac10 ? gunshotClipsMac10 : gunshotClipsRevolver);
+
     if (gunshotClips == null || gunshotClips.Length == 0)
     {
         Debug.LogWarning("Tried to play clip from empty gunshotClips array");

@@ -120,7 +120,7 @@ public class PlayerController : MonoBehaviour
             isFiring = true;
             if(audioManager)
             {
-                audioManager.PlayGunshot(this.transform.parent.gameObject);
+                audioManager.PlayGunshot(usingMac10, this.transform.parent.gameObject);
             }
             if (usingMac10)
             {

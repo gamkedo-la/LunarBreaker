@@ -1201,10 +1201,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dddead93c0cab411faf9416cba444b4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunshotClips:
+  gunshotClipsMac10:
   - {fileID: 8300000, guid: 2602a2fd5f8d1c345b2f14702fbde333, type: 3}
   - {fileID: 8300000, guid: 8ab633315c664384eae11f148b8b02f1, type: 3}
   - {fileID: 8300000, guid: da75519f3a45d0a41b198d77e28d2850, type: 3}
+  - {fileID: 8300000, guid: dbedc75dde12b9244baa38c3952e7259, type: 3}
+  - {fileID: 8300000, guid: 9d320bf3d0bf52443a64109a1d5420f9, type: 3}
+  gunshotClipsRevolver:
+  - {fileID: 8300000, guid: e5cccf35b33094f7497098b92991739d, type: 3}
+  - {fileID: 8300000, guid: d7541b5c0be5649b59f2354d82f0c423, type: 3}
+  - {fileID: 8300000, guid: 9f9f0cc3ecd7a4ef4b6b13db7baa413a, type: 3}
 --- !u!1 &4811839053712443821
 GameObject:
   m_ObjectHideFlags: 0
