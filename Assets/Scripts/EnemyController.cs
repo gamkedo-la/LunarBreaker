@@ -15,6 +15,7 @@ public class EnemyController : MonoBehaviour
     private float strafeSpeed = 5.0f;
     private float distRandomOffset;
     private float viewAngle = 25.0f; // should roughly match light cone
+    private float gunAimAngle = 15.0f; // adjusts aim within this angle range
     // private float sleepDistance = 220.0f;
     private bool sleeping = false;
     private float wanderRange = 10.0f;
@@ -45,6 +46,8 @@ public class EnemyController : MonoBehaviour
         
         StartCoroutine(SwitchStrafeOrSearchDir());
         StartCoroutine(FireRound());
+        GetComponent<Rigidbody>().isKinematic = true;
+        UseNavMesh(true);
         UpdateLightMode();
     }
 
@@ -78,6 +81,13 @@ public class EnemyController : MonoBehaviour
             if(chasing)
             {
                 Quaternion fireDir = muzzleLoc.rotation;
+                Quaternion quatTowardPlayer = Quaternion.LookRotation(playerTransform.position - transform.position);
+                if (Quaternion.Angle(transform.rotation,
+                        quatTowardPlayer) < gunAimAngle)
+                {
+                    fireDir = quatTowardPlayer;
+                }
+                
                 fireDir *= Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), muzzleLoc.up);
                 fireDir *= Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), muzzleLoc.right);
                 GameObject.Instantiate(bullet, muzzleLoc.position, fireDir);
@@ -114,20 +124,13 @@ public class EnemyController : MonoBehaviour
         if (useNav)
         {
             chasing = false;
-            GetComponent<Rigidbody>().isKinematic = true;
-            agent.enabled = true;
             agent.SetDestination(PickNearbyGoal(wanderRange));
             UpdateLightMode();
         }
         else
         {
             chasing = true;
-            GetComponent<Rigidbody>().isKinematic = false;
-            if(agent.enabled)
-            {
-                agent.ResetPath();
-            }
-            agent.enabled = false;
+            agent.SetDestination(transform.position);
             UpdateLightMode();
         }
     }
@@ -188,32 +191,14 @@ public class EnemyController : MonoBehaviour
             if(musicController) {
                 musicController.CombatMusicBump(); // keep refreshing time until after combat/escape
             }
+            /*
             if (Vector3.Distance(transform.position, targetPoint) > distanceToStop + distRandomOffset)
             {
                 GetComponent<Rigidbody>().velocity = transform.forward * moveSpeed;
             } else
             {
                 GetComponent<Rigidbody>().velocity = (strafeCW ? -1.0f : 1.0f)*transform.right * strafeSpeed;
-            }
-
-            RaycastHit rhInfo;
-
-            if(Physics.Raycast(transform.position, Vector3.down, out rhInfo))
-            {
-                float hoverDist = Vector3.Distance(transform.position, rhInfo.point);
-                float hoverMin = 4.5f;
-                float hoverMax = 7.0f;
-                if (hoverDist < hoverMin)
-                {
-                    GetComponent<Rigidbody>().velocity += transform.up * 2.0f;
-                }
-                else if (hoverDist > hoverMax)
-                {
-                    GetComponent<Rigidbody>().velocity += transform.up * -2.0f;
-                }
-            }
-
-
+            }*/
 
             if (Vector3.Distance(transform.position,targetPoint) > distanceToLose + distRandomOffset ||
                 LineOfSightToPlayer() == false)

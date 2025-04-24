@@ -176,7 +176,7 @@ public class PlayerController : MonoBehaviour
 
             Quaternion fireSprayDir = Quaternion.identity;
             if (usingMac10) {
-                float sprayFireAng = 4.0f;
+                float sprayFireAng = 3.0f;
                 fireSprayDir = Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), Vector3.up)
                     * Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), Vector3.right);
             }
