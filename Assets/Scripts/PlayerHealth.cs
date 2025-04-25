@@ -52,7 +52,7 @@ public class PlayerHealth : MonoBehaviour
         audioManager.PlayRandSound(AudioManager.SoundType.playerDamaged, gameObject);
         timeBeforeNextDamage = timeBeforeNextDamageDelay;
         currentHealth -= damage;
-        Debug.Log("player hit for " + damage + " now " + currentHealth);
+        // Debug.Log("player hit for " + damage + " now " + currentHealth);
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         damageVisualFeedback.ShowImage();
 

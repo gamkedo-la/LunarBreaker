@@ -71,6 +71,9 @@ public class PlayerController : MonoBehaviour
     public GameObject nagantRevolverHolder;
     public GameObject mac10ShellPrefab;
 
+    public GameObject deadPrefab;
+    private bool diedYet = false;
+
     // Health
     PlayerHealth playerHealth;
 
@@ -307,7 +310,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerHealth.IsDead()) return;
+        if (playerHealth.IsDead())
+        {
+            if(diedYet == false )
+            {
+                Instantiate(deadPrefab, transform.position, Quaternion.identity);
+                diedYet = true;
+            }
+            return;
+        }
 
         if (Input.GetKey(KeyCode.Alpha1))
         {
