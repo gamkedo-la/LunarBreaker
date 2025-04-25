@@ -8,6 +8,18 @@ public class PlayerPickup : MonoBehaviour
     public int mac10AmmoGive = 0;
     public int revolverAmmoGive = 0;
 
+    ParticleSystem particleChild;
+
+    private void Awake() // must run before Start so particles won't self destruct
+    {
+        particleChild = GetComponentInChildren<ParticleSystem>();
+        if (particleChild)
+        {
+            Debug.Log(particleChild.name + " found");
+            particleChild.gameObject.SetActive(false);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         bool playerTouched = false;
@@ -27,6 +39,12 @@ public class PlayerPickup : MonoBehaviour
         }
         if(playerTouched)
         {
+            if(particleChild)
+            {
+                particleChild.transform.SetParent(null); // unchild
+                particleChild.gameObject.SetActive(true); // sound, particle, it'll self destruct itself
+                Debug.Log(particleChild.name + " detached");
+            }
             Destroy(gameObject);
         }
     }
