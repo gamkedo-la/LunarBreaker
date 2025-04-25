@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateAmmoReadout()
     {
-        ammoDisplayText.text = "1: MAC - 10("+Mac10Ammo+")\n2: Nagant("+RevolverAmmo+")";
+        ammoDisplayText.text = "1: MAC-10 ("+Mac10Ammo+")\n2: Nagant ("+RevolverAmmo+")";
     }
 
     IEnumerator Shoot()
