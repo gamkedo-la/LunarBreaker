@@ -10,8 +10,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] shellBounceClips;
     public AudioClip[] emptyGunClips;
     public AudioClip[] playerDamagedClips;
+    public AudioClip[] playerJumpClips;
+    public AudioClip[] playerLandClips;
 
-    public enum SoundType {mac10, revolver, shells, emptyGun, playerDamaged };
+    public enum SoundType { mac10, revolver, shells, emptyGun, playerDamaged, playerJump, playerLand };
 
     public static AudioManager Instance { get; private set; }
 
@@ -52,6 +54,12 @@ public void PlayRandSound(SoundType whichSound, GameObject caller)
                 break;
             case SoundType.emptyGun:
                 gunshotClips = emptyGunClips;
+                break;
+            case SoundType.playerJump:
+                gunshotClips = playerJumpClips;
+                break;
+            case SoundType.playerLand:
+                gunshotClips = playerLandClips;
                 break;
             case SoundType.playerDamaged:
             default:

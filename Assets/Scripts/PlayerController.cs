@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public bool isFiring;
     public bool isReloading;
     public bool isSprinting;
+    private bool wasGrounded = true;
 
     private float mac10ReloadTime = 0.15f;
     private float revolverReloadTime = 0.6f;
@@ -57,7 +58,8 @@ public class PlayerController : MonoBehaviour
     public AudioManager audioManager;
 
     private AudioSource alarmSawMe;
-
+    private float recentlyMadeLandingOrJumpNoise = 0.0f;
+    private float recentlyMadeLandingOrJumpNoiseDelay = 0.3f;
 
     //gun
     private bool usingMac10 = true;
@@ -383,7 +385,6 @@ public class PlayerController : MonoBehaviour
 
         canJump = Physics.OverlapSphere(groundCheckPoint.position, .25f, whatIsGround).Length > 0;
 
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (canJump)
@@ -396,7 +397,32 @@ public class PlayerController : MonoBehaviour
                 moveInput.y = jumpPower;
                 canDoubleJump = false;
             }
+        }
 
+        bool groundedForNoisePurposes = Physics.OverlapSphere(groundCheckPoint.position, 0.5f, whatIsGround).Length > 0;
+
+        if(recentlyMadeLandingOrJumpNoise>0.0f)
+        {
+            recentlyMadeLandingOrJumpNoise -= Time.deltaTime;
+        }
+        
+        if (wasGrounded != groundedForNoisePurposes)
+        {
+            if(recentlyMadeLandingOrJumpNoise <= 0.0f)
+            {
+                recentlyMadeLandingOrJumpNoise = recentlyMadeLandingOrJumpNoiseDelay;
+                if (wasGrounded)
+                {
+                    audioManager.PlayRandSound(AudioManager.SoundType.playerLand,
+                                this.transform.parent.gameObject);
+                }
+                else
+                {
+                    audioManager.PlayRandSound(AudioManager.SoundType.playerJump,
+                                this.transform.parent.gameObject);
+                }
+            }
+            wasGrounded = groundedForNoisePurposes;
         }
 
 
