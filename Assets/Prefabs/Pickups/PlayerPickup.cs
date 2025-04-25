@@ -15,7 +15,6 @@ public class PlayerPickup : MonoBehaviour
         particleChild = GetComponentInChildren<ParticleSystem>();
         if (particleChild)
         {
-            Debug.Log(particleChild.name + " found");
             particleChild.gameObject.SetActive(false);
         }
     }
@@ -43,7 +42,6 @@ public class PlayerPickup : MonoBehaviour
             {
                 particleChild.transform.SetParent(null); // unchild
                 particleChild.gameObject.SetActive(true); // sound, particle, it'll self destruct itself
-                Debug.Log(particleChild.name + " detached");
             }
             Destroy(gameObject);
         }

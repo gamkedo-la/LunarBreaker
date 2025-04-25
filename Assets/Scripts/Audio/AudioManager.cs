@@ -77,8 +77,9 @@ public void PlayRandSound(SoundType whichSound, GameObject caller)
     {
         callerAudio = caller.AddComponent<AudioSource>();
     }
+    callerAudio.spatialBlend = 0.5f;
 
-    int i = Random.Range(0, gunshotClips.Length);
-    callerAudio.PlayOneShot(gunshotClips[i]); // Play sound on the caller    
+        int i = Random.Range(0, gunshotClips.Length);
+    callerAudio.PlayOneShot(gunshotClips[i]); // Play sound on the caller
 }
 }
