@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b6aea636afbb74c8c402f8e315769a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenu: {fileID: 0}
   speed: 80
   maxdist: 1600
   totalDist: 0
@@ -179,10 +180,13 @@ MonoBehaviour:
     Infiltrate HTGD headquarters
 
 
-    2. Destroy mainframe computer
+    2. Avoid or overcome detection
 
 
-    3. Escape'
+    3. Take
+    elevator to the dead drop
+
+    while GateKeeper is out on patrol'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
