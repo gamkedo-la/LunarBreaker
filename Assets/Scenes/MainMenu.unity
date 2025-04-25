@@ -8705,7 +8705,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: List of names goes here
+  m_text: "Alex Joiner: Project lead, core gameplay, player movement, weapon models,
+    enemy hover drone and camera models, player/enemy gun mechanics and related visual
+    effects, base enemy behavior, bullet holes, revolver sway feature, additional
+    models (terminal, cardboard box, backpack)\nChrister \"McFunkypants\" Kaitila:
+    Level design and related models/textures, environment textures (steel, cabinets,
+    concrete, mainframe, ducts, rock, grates, buildings, floors and walls), visibility
+    occlusion optimization, laser trap movement, intro scroll, scene lighting, doors,
+    pipes, girders, electrical boxes, stairs\nNicole-Brandon Paul: Music (combat
+    and menu)\nIan Cherabier: Health system and related UI, laser damage support,
+    game over handling, main menu, player hurt feedback, muzzle flash bug fix, variou
+    bug fixes\nChris DeLeon: Camera and drone vision, pickups, revolver implementation,
+    enemy/item placement, win text\nCassidy Noble: Environment prop models (desk,
+    office chair, filing cabinet, corkboard)\nMichael Avrie: Sound effects (revolver
+    shots, drone alarms, out of ammo, player damage, enemy damage/destruction, player
+    jump and landing, pickups, ending elevator)\nAlex (Weinbagz) Weinberg: Audio
+    manager/mixer, ambient audio (outside, labs, drone hum), gun sounds (casings,
+    mac-10 shots)\nNaji Mammeri: Movement tuning, environment standards testing,
+    patrol code (not in release)\nLuis Monta\xF1a: Ammo UI, gun icon (early draft,
+    not in release)\nTyler Funk: Ground texture"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8732,10 +8750,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75
+  m_fontSize: 44.8
   m_fontSizeBase: 75
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
