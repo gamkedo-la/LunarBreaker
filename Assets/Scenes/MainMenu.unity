@@ -48643,13 +48643,49 @@ PrefabInstance:
     m_TransformParent: {fileID: 705027606}
     m_Modifications:
     - target: {fileID: 1516212424794538048, guid: 8a85ddb6f911d1a41a40033d6dfe7890, type: 3}
+      propertyPath: speed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1516212424794538048, guid: 8a85ddb6f911d1a41a40033d6dfe7890, type: 3}
       propertyPath: maxdist
-      value: 1175
+      value: 1250
       objectReference: {fileID: 0}
     - target: {fileID: 1516212424794538048, guid: 8a85ddb6f911d1a41a40033d6dfe7890, type: 3}
       propertyPath: mainMenu
       value: 
       objectReference: {fileID: 1389709858}
+    - target: {fileID: 4668489105375083970, guid: 8a85ddb6f911d1a41a40033d6dfe7890, type: 3}
+      propertyPath: m_text
+      value: '====== TOP SECRET ======
+
+
+
+        Codename: LunarBreaker
+
+        Location:
+        Moon Base Delta
+
+        Haxxor Terran Global Defense
+
+
+
+        Mission
+        Objectives:
+
+
+
+        1. Infiltrate HTGD headquarters
+
+
+        2. Avoid
+        or overcome detection
+
+
+        3. Take the elevator up to the dead
+
+        drop
+        while GateKeeper is on patrol'
+      objectReference: {fileID: 0}
     - target: {fileID: 5208397413187549970, guid: 8a85ddb6f911d1a41a40033d6dfe7890, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
