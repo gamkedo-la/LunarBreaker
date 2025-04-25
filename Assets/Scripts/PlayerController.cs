@@ -276,6 +276,11 @@ public class PlayerController : MonoBehaviour
 
     void SetGunMac10(bool equipMac10)
     {
+        if(usingMac10 != equipMac10)
+        {
+            audioManager.PlayRandSound(AudioManager.SoundType.emptyGun,
+                            this.transform.parent.gameObject);
+        }
         usingMac10 = equipMac10;
         mac10Holder.SetActive(usingMac10);
         nagantRevolverHolder.SetActive(!usingMac10);
