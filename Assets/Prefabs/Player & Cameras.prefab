@@ -597,6 +597,7 @@ MonoBehaviour:
   lowHealthColor: {r: 0.8, g: 0.4, b: 0.4, a: 0.2}
   gunAnimator: {fileID: 1080905053473426013}
   damageVisualFeedback: {fileID: 7606327691565522822}
+  audioManager: {fileID: 1482425022191991741}
 --- !u!136 &6742383560542438047
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1226,6 +1227,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a7fcbb16d50368d489cd91ac6e8b93d4, type: 3}
   emptyGunClips:
   - {fileID: 8300000, guid: 7188dad95afab4ed599be66dce787e7c, type: 3}
+  playerDamagedClips:
+  - {fileID: 8300000, guid: 07f7c2bdf22fa4239bb28bb06a77948b, type: 3}
+  - {fileID: 8300000, guid: 3f6ef26b4b8a44830b52aa11c8ee6c1a, type: 3}
+  - {fileID: 8300000, guid: aae28e81d8ed04d5aade31a734b7f252, type: 3}
 --- !u!1 &4811839053712443821
 GameObject:
   m_ObjectHideFlags: 0

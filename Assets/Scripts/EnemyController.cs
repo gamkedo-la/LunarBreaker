@@ -86,7 +86,7 @@ public class EnemyController : MonoBehaviour
             if(chasing)
             {
                 Quaternion fireDir = muzzleLoc.rotation;
-                Quaternion quatTowardPlayer = Quaternion.LookRotation(playerTransform.position - transform.position);
+                Quaternion quatTowardPlayer = Quaternion.LookRotation(playerTransform.position+Vector3.up*0.25f - transform.position);
                 if (Quaternion.Angle(transform.rotation,
                         quatTowardPlayer) < gunAimAngle)
                 {

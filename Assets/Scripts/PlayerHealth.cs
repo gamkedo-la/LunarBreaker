@@ -23,8 +23,7 @@ public class PlayerHealth : MonoBehaviour
 
     LevelManager levelManager;
 
-
-
+    public AudioManager audioManager;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +49,7 @@ public class PlayerHealth : MonoBehaviour
         {
             return;
         }
+        audioManager.PlayRandSound(AudioManager.SoundType.playerDamaged, gameObject);
         timeBeforeNextDamage = timeBeforeNextDamageDelay;
         currentHealth -= damage;
         Debug.Log("player hit for " + damage + " now " + currentHealth);

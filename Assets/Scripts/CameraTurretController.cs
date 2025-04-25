@@ -176,7 +176,7 @@ public class CameraTurretController : MonoBehaviour
     // Update is called once per frame
     void Update()
         {
-        targetPoint = playerTransform.position;
+        targetPoint = playerTransform.position + Vector3.up * 0.25f;
 
         if (!chasing)
         {
