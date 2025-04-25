@@ -23,6 +23,8 @@ public class ExitSequenceStart : MonoBehaviour
         if(pcScript)
         {
             firedYet = true;
+            AudioSource soundSource = GetComponent<AudioSource>();
+            soundSource.Play();
         }
     }
 
