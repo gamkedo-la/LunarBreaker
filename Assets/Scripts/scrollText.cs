@@ -16,8 +16,8 @@ public class scrollText : MonoBehaviour
     {
 		Cursor.lockState = CursorLockMode.None;
 		Cursor.visible = true;
-		startPos = transform.position;
-    }
+		startPos = GetComponent<RectTransform>().anchoredPosition;
+	}
 
 	public void Reset()
     {
@@ -34,7 +34,7 @@ public class scrollText : MonoBehaviour
     {
         totalDist += Time.deltaTime * speed;
 		RectTransform rt = GetComponent<RectTransform>();
-		rt.position = new Vector2(startPos.x,startPos.y+totalDist);
+		rt.anchoredPosition = new Vector2(startPos.x,startPos.y+totalDist);
 		//transform.position.Set(startPos.x,startPos.y+totalDist,startPos.z);
 		
 		if (totalDist > maxdist) {
