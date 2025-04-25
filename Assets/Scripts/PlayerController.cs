@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
     //audio
     public AudioManager audioManager;
 
+    private AudioSource alarmSawMe;
 
 
     //gun
@@ -75,6 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         instance = this;
         playerHealth = GetComponent<PlayerHealth>();
+        alarmSawMe = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update

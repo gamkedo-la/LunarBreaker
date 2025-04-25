@@ -8,6 +8,7 @@ public class CameraTurretController : MonoBehaviour
     private float distanceToChase = 32f, distanceToLose = 45f;
     private Vector3 targetPoint;
     private static Transform playerTransform;
+    private static AudioSource playerAlarmSound;
     private static MusicFader musicController;
     private float distRandomOffset;
     private float viewAngle = 25.0f; // should roughly match light cone
@@ -46,6 +47,7 @@ public class CameraTurretController : MonoBehaviour
         if (playerTransform == null)
         {
             playerTransform = GameObject.Find("Player").transform;
+            playerAlarmSound = playerTransform.GetComponent<AudioSource>();
         }
         if (musicController == null)
         {
@@ -178,6 +180,7 @@ public class CameraTurretController : MonoBehaviour
                 if (chasing==false && LineOfSightToPlayer())
                 {
                     chasing = true;
+                    playerAlarmSound.Play();
                     returnOrientation = Quaternion.Slerp(scanEdgeA.rotation, scanEdgeB.rotation, scanProgressPerc);
 
                     UpdateLightMode();

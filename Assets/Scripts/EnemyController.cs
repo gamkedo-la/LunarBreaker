@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     private float distanceToStop = 7f, distanceToChase = 32f, distanceToLose = 45f;
     private Vector3 targetPoint;
     private static Transform playerTransform;
+    private static AudioSource playerAlarmSound;
     private static MusicFader musicController;
     private bool strafeCW = false;
     private float moveSpeed = 6.0f;
@@ -38,6 +39,7 @@ public class EnemyController : MonoBehaviour
         if (playerTransform == null)
         {
             playerTransform = GameObject.Find("Player").transform;
+            playerAlarmSound = playerTransform.GetComponent<AudioSource>();
         }
         if(musicController == null)
         {
@@ -182,6 +184,7 @@ public class EnemyController : MonoBehaviour
             {
                 if (chasing==false && LineOfSightToPlayer())
                 {
+                    playerAlarmSound.Play();
                     UseNavMesh(false);
                 }
             }
