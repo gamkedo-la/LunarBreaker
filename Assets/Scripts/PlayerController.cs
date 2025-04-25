@@ -455,7 +455,13 @@ public class PlayerController : MonoBehaviour
         Mathf.Clamp(mouseInput.x, -90.0f, 90.0f);
 
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x, transform.rotation.eulerAngles.z);
+        Quaternion camAngleBeforeChange = camTrans.rotation;
         camTrans.rotation = Quaternion.Euler(camTrans.rotation.eulerAngles + new Vector3(-mouseInput.y, 0f, 0f));
+        if(camTrans.up.y < 0.0f) // camera inverted, abrupt repair to bad state
+        {
+            // Debug.Log("player flipped camera, undoing last change");
+            camTrans.rotation = camAngleBeforeChange;
+        }
 
         // Shooting
         if (Input.GetMouseButtonDown(0))
