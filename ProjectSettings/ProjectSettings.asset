@@ -829,7 +829,13 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
+    Game Performance: 0
+    Legacy Analytics: 0
+    Purchasing: 0
+    UDP: 0
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -849,11 +855,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 6418e2e8-732e-4386-b297-0c28a16ce39d
+  cloudProjectId: 0ea6b18d-e5aa-462c-bbd5-baecece3398c
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: LunarBreaker
-  organizationId: aj528
+  organizationId: christopher-deleon
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
