@@ -120,12 +120,7 @@ public class PlayerController : MonoBehaviour
         do
         {
             isFiring = true;
-            if(audioManager)
-            {
-                audioManager.PlayRandSound(usingMac10 ?
-                    AudioManager.SoundType.mac10 : AudioManager.SoundType.revolver,
-                    this.transform.parent.gameObject);
-            }
+            
             if (usingMac10)
             {
                 if(Mac10Ammo<=0)
@@ -133,6 +128,11 @@ public class PlayerController : MonoBehaviour
                     float moveDuringNoMac10AmmoTime = outOfAmmoShakeTime;
                     Vector3 macLocalPos = mac10Holder.transform.localPosition;
                     Quaternion macLocalRot = mac10Holder.transform.localRotation;
+                    if (audioManager)
+                    {
+                        audioManager.PlayRandSound(AudioManager.SoundType.emptyGun,
+                            this.transform.parent.gameObject);
+                    }
                     while (moveDuringNoMac10AmmoTime >= 0.0f)
                     {
                         moveDuringNoMac10AmmoTime -= Time.fixedDeltaTime;
@@ -149,6 +149,11 @@ public class PlayerController : MonoBehaviour
                     isFiring = false;
                     break; // escaping the do-while of this coroutine IEnumerator
                 }
+                if (audioManager)
+                {
+                    audioManager.PlayRandSound(AudioManager.SoundType.mac10,
+                        this.transform.parent.gameObject);
+                }
                 Mac10Ammo--;
                 vfx_muzzleflash_m10.GetComponent<VisualEffect>().Play();
             }
@@ -157,6 +162,11 @@ public class PlayerController : MonoBehaviour
                 if (RevolverAmmo <= 0)
                 {
                     float moveDuringNoRevolverTime = outOfAmmoShakeTime;
+                    if (audioManager)
+                    {
+                        audioManager.PlayRandSound(AudioManager.SoundType.emptyGun,
+                            this.transform.parent.gameObject);
+                    }
                     while (moveDuringNoRevolverTime >= 0.0f)
                     {
                         moveDuringNoRevolverTime -= Time.fixedDeltaTime;
@@ -172,6 +182,14 @@ public class PlayerController : MonoBehaviour
                     }
                     isFiring = false;
                     break; // escaping the do-while of this coroutine IEnumerator
+                }
+                if (audioManager)
+                {
+                    for(int i=0;i<3;i++) // overlap a few for bigger revolver hit
+                    {
+                        audioManager.PlayRandSound(AudioManager.SoundType.revolver,
+                            this.transform.parent.gameObject);
+                    }
                 }
                 RevolverAmmo--;
                 vfx_muzzleflash_rev.GetComponent<VisualEffect>().Play();

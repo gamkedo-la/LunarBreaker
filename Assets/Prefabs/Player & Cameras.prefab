@@ -1211,6 +1211,21 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e5cccf35b33094f7497098b92991739d, type: 3}
   - {fileID: 8300000, guid: d7541b5c0be5649b59f2354d82f0c423, type: 3}
   - {fileID: 8300000, guid: 9f9f0cc3ecd7a4ef4b6b13db7baa413a, type: 3}
+  shellBounceClips:
+  - {fileID: 8300000, guid: 4f3d5181a273c7248ad9b4b63db39431, type: 3}
+  - {fileID: 8300000, guid: 7aec42bd3509d3a4386aa4f06b94a47e, type: 3}
+  - {fileID: 8300000, guid: 70fec8f624a21ec40a2c31b127a92387, type: 3}
+  - {fileID: 8300000, guid: f45e5162495989b498d4e42eedb5a18e, type: 3}
+  - {fileID: 8300000, guid: 3f041b0bf17633844afad7d06529fe13, type: 3}
+  - {fileID: 8300000, guid: a98d7bec139a70042b26df342077fa84, type: 3}
+  - {fileID: 8300000, guid: d36185f358494244d89f82242d4620a5, type: 3}
+  - {fileID: 8300000, guid: 6f9291a3375d2ab45b16f8c8e7967824, type: 3}
+  - {fileID: 8300000, guid: 8586258edfa15634a98dbd17c5787dad, type: 3}
+  - {fileID: 8300000, guid: 5220795984357f04682ac804eff176c0, type: 3}
+  - {fileID: 8300000, guid: 13d6827985d14dd42b4a18eef62d5d86, type: 3}
+  - {fileID: 8300000, guid: a7fcbb16d50368d489cd91ac6e8b93d4, type: 3}
+  emptyGunClips:
+  - {fileID: 8300000, guid: 7188dad95afab4ed599be66dce787e7c, type: 3}
 --- !u!1 &4811839053712443821
 GameObject:
   m_ObjectHideFlags: 0
