@@ -10,10 +10,9 @@ public class EnemyController : MonoBehaviour
     private Vector3 targetPoint;
     private static Transform playerTransform;
     private static AudioSource playerAlarmSound;
+    private static AudioManager bulletSoundMaker;
     private static MusicFader musicController;
     private bool strafeCW = false;
-    private float moveSpeed = 6.0f;
-    private float strafeSpeed = 5.0f;
     private float distRandomOffset;
     private float viewAngle = 25.0f; // should roughly match light cone
     private float gunAimAngle = 15.0f; // adjusts aim within this angle range
@@ -45,7 +44,11 @@ public class EnemyController : MonoBehaviour
         {
             musicController = GameObject.Find("Music").GetComponent<MusicFader>();
         }
-        
+        if (bulletSoundMaker == null)
+        {
+            bulletSoundMaker = Camera.main.GetComponent<AudioManager>();
+        }
+
         StartCoroutine(SwitchStrafeOrSearchDir());
         StartCoroutine(FireRound());
         GetComponent<Rigidbody>().isKinematic = true;
@@ -89,7 +92,10 @@ public class EnemyController : MonoBehaviour
                 {
                     fireDir = quatTowardPlayer;
                 }
-                
+
+                bulletSoundMaker.PlayRandSound(AudioManager.SoundType.mac10, gameObject);
+                bulletSoundMaker.PlayRandSound(AudioManager.SoundType.shells, gameObject);
+
                 fireDir *= Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), muzzleLoc.up);
                 fireDir *= Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), muzzleLoc.right);
                 GameObject.Instantiate(bullet, muzzleLoc.position, fireDir);

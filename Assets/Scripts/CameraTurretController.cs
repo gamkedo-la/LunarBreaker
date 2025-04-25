@@ -10,6 +10,7 @@ public class CameraTurretController : MonoBehaviour
     private static Transform playerTransform;
     private static AudioSource playerAlarmSound;
     private static MusicFader musicController;
+    private static AudioManager bulletSoundMaker;
     private float distRandomOffset;
     private float viewAngle = 25.0f; // should roughly match light cone
     private float sprayFireAng = 2.0f;
@@ -57,6 +58,10 @@ public class CameraTurretController : MonoBehaviour
                 musicController = musicGO.GetComponent<MusicFader>();
             }
         }
+        if(bulletSoundMaker == null)
+        {
+            bulletSoundMaker = Camera.main.GetComponent<AudioManager>();
+        }
 
         StartCoroutine(FireRound());
         StartCoroutine(BlinkLightTimer());
@@ -97,6 +102,8 @@ public class CameraTurretController : MonoBehaviour
                 fireDir *= Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), muzzleLoc.up);
                 fireDir *= Quaternion.AngleAxis(Random.Range(-sprayFireAng, sprayFireAng), muzzleLoc.right);
                 GameObject.Instantiate(bullet, muzzleLoc.position, fireDir);
+                bulletSoundMaker.PlayRandSound(AudioManager.SoundType.mac10, gameObject);
+                bulletSoundMaker.PlayRandSound(AudioManager.SoundType.shells, gameObject);
             }
             yield return new WaitForSeconds(0.3f);
         }

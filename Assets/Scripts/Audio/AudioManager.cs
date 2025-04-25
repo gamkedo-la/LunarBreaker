@@ -7,6 +7,9 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip[] gunshotClipsMac10;
     public AudioClip[] gunshotClipsRevolver;
+    public AudioClip[] shellBounceClips;
+
+    public enum SoundType {mac10, revolver, shells};
 
     public static AudioManager Instance { get; private set; }
 
@@ -31,9 +34,22 @@ public class AudioManager : MonoBehaviour
      
     }
 
-public void PlayGunshot(bool usingMac10, GameObject caller)
+public void PlayRandSound(SoundType whichSound, GameObject caller)
 {
-    AudioClip[] gunshotClips = (usingMac10 ? gunshotClipsMac10 : gunshotClipsRevolver);
+        AudioClip[] gunshotClips;
+        switch(whichSound)
+        {
+            case SoundType.mac10:
+                gunshotClips = gunshotClipsMac10;
+                break;
+            case SoundType.revolver:
+                gunshotClips = gunshotClipsRevolver;
+                break;
+            case SoundType.shells:
+            default:
+                gunshotClips = shellBounceClips;
+                break;
+        }
 
     if (gunshotClips == null || gunshotClips.Length == 0)
     {
