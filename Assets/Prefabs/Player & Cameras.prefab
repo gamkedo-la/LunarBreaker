@@ -1232,9 +1232,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3f6ef26b4b8a44830b52aa11c8ee6c1a, type: 3}
   - {fileID: 8300000, guid: aae28e81d8ed04d5aade31a734b7f252, type: 3}
   playerJumpClips:
-  - {fileID: 8300000, guid: fbc81bd6aca3a42c8abf906e7ba19966, type: 3}
+  - {fileID: 8300000, guid: 33fc20c2c9e8e447c920359ae5a5ce6a, type: 3}
   playerLandClips:
-  - {fileID: 8300000, guid: aae28e81d8ed04d5aade31a734b7f252, type: 3}
+  - {fileID: 8300000, guid: e9aaaa01971f041f3b0b272312143dbe, type: 3}
 --- !u!1 &4811839053712443821
 GameObject:
   m_ObjectHideFlags: 0
