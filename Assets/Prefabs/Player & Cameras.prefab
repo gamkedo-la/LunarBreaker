@@ -1229,13 +1229,26 @@ MonoBehaviour:
   emptyGunClips:
   - {fileID: 8300000, guid: 7188dad95afab4ed599be66dce787e7c, type: 3}
   playerDamagedClips:
-  - {fileID: 8300000, guid: 07f7c2bdf22fa4239bb28bb06a77948b, type: 3}
-  - {fileID: 8300000, guid: 3f6ef26b4b8a44830b52aa11c8ee6c1a, type: 3}
-  - {fileID: 8300000, guid: aae28e81d8ed04d5aade31a734b7f252, type: 3}
+  - {fileID: 8300000, guid: 3098254a55be8bd4485810a39e33e4b7, type: 3}
+  - {fileID: 8300000, guid: ba5cfb7c1887ff446ba5b7c914ac9af1, type: 3}
+  - {fileID: 8300000, guid: 2a568f8d4a1b57042aa1eb8383130727, type: 3}
+  - {fileID: 8300000, guid: 78f179a60453f73469af90a662034f52, type: 3}
+  - {fileID: 8300000, guid: 19ba922d0ec36e14eb720d423196e0d0, type: 3}
+  - {fileID: 8300000, guid: 3de2967e163d8854baacefed3101ab83, type: 3}
+  - {fileID: 8300000, guid: 38ad74885f0cf004d9a55dfab84be044, type: 3}
+  - {fileID: 8300000, guid: a99109890f98e8f489f069bc80a40cb7, type: 3}
+  - {fileID: 8300000, guid: ff8e8bdd99e12d344bc44d17ebfded4a, type: 3}
   playerJumpClips:
   - {fileID: 8300000, guid: 33fc20c2c9e8e447c920359ae5a5ce6a, type: 3}
   playerLandClips:
   - {fileID: 8300000, guid: e9aaaa01971f041f3b0b272312143dbe, type: 3}
+  enemyExplodeClips:
+  - {fileID: 8300000, guid: 8405edae907fa7a4c8484eb74e7713ac, type: 3}
+  - {fileID: 8300000, guid: 6094cee895d03b14b98bc09a5adfda99, type: 3}
+  - {fileID: 8300000, guid: 01ee54f88444faf4ba6f0324157fa0fa, type: 3}
+  - {fileID: 8300000, guid: 4827b3398f3854048b17fac1a2c35724, type: 3}
+  - {fileID: 8300000, guid: c42f7a48f60616a449e7779ad6f61145, type: 3}
+  - {fileID: 8300000, guid: d84f72d387241d24dbd680d6ca3a525a, type: 3}
 --- !u!1 &4811839053712443821
 GameObject:
   m_ObjectHideFlags: 0
