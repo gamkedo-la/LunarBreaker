@@ -56,7 +56,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 2
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
@@ -71,7 +71,7 @@ ModelImporter:
     generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
-    weldVertices: 1
+    weldVertices: 0
     bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
@@ -80,11 +80,11 @@ ModelImporter:
     optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
-    secondaryUVAngleDistortion: 8
-    secondaryUVAreaDistortion: 15
-    secondaryUVHardAngle: 88
+    secondaryUVAngleDistortion: 32
+    secondaryUVAreaDistortion: 39
+    secondaryUVHardAngle: 89
     secondaryUVMarginMethod: 1
-    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinLightmapResolution: 6
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
@@ -93,7 +93,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-    normalCalculationMode: 4
+    normalCalculationMode: 1
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 2
