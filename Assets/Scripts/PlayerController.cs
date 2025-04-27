@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("9 and 8 KEY TELEPORTS TO END OR TEST AREA - delete TeleportTest gameobject for release");
+        // Debug.Log("9 and 8 KEY TELEPORTS TO END OR TEST AREA - delete TeleportTest gameobject for release");
 
         isFiring = false;
         isReloading = false;
@@ -331,7 +331,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // DEBUG ONLY!!! ---v
-		if (Input.GetKey(KeyCode.Alpha9))
+		/*if (Input.GetKey(KeyCode.Alpha9))
         {
             Debug.Log("TELEPORTING TO END BOSS");
 			GameObject gotoGO = GameObject.Find("TeleportTest");
@@ -357,7 +357,7 @@ public class PlayerController : MonoBehaviour
                 controller.enabled = true;
             }
 
-        }
+        }*/
 		
 		
         float yStore = moveInput.y;
