@@ -12,11 +12,6 @@ public class EnemyExplodeSound : MonoBehaviour
         {
             soundMaker = Camera.main.GetComponent<AudioManager>();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         soundMaker.PlayRandSound(AudioManager.SoundType.enemyExplode, gameObject);
     }
 }
