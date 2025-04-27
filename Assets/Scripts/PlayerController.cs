@@ -223,7 +223,7 @@ public class PlayerController : MonoBehaviour
                 shellRB.AddForce(shellSprayDir * mac10ShellPort.forward * Random.Range(randForceMin, randForceMax));
             }
 
-            if (Physics.Raycast(gunBarrel.position, fireSprayDir * gunBarrel.forward, out hit, range))
+            if (Physics.Raycast(gunBarrel.position - gunBarrel.forward*2.0f, fireSprayDir * gunBarrel.forward, out hit, range))
             {
                 EnemyHealthController enemy = hit.transform.GetComponent<EnemyHealthController>();
                 if (enemy != null)
