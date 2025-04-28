@@ -48,7 +48,9 @@ public class PlayerController : MonoBehaviour
 
 
     //vfx
-    public GameObject vfx_muzzleflash_m10;
+    //public GameObject vfx_muzzleflash_m10;
+    public ParticleSystem vfx_muzzleflash_m10_A;
+    public ParticleSystem vfx_muzzleflash_m10_B;
     public GameObject vfx_muzzleflash_rev;
     public GameObject vfx_bullet_hole;
     public GameObject vfx_bullet_spark;
@@ -160,7 +162,9 @@ public class PlayerController : MonoBehaviour
                         this.transform.parent.gameObject);
                 }
                 Mac10Ammo--;
-                vfx_muzzleflash_m10.GetComponent<VisualEffect>().Play();
+                //vfx_muzzleflash_m10.GetComponent<VisualEffect>().Play();
+                vfx_muzzleflash_m10_A.Play();
+                vfx_muzzleflash_m10_B.Play();
             }
             else
             {
