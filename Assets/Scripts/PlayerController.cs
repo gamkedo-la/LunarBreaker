@@ -308,7 +308,7 @@ public class PlayerController : MonoBehaviour
         {
             world2Screen = UICamera.WorldToScreenPoint(gunBarrel.position + gunBarrel.forward*10.0f);
         }
-        aimCursor.position = Vector3.Lerp(aimCursor.position, world2Screen, 0.8f);
+        aimCursor.position = Vector3.Lerp(aimCursor.position, world2Screen, 0.85f);
     }
 
     // Update is called once per frame
