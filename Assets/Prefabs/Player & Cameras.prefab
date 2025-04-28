@@ -11608,7 +11608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3189172680883018885
 Transform:
   m_ObjectHideFlags: 0
@@ -21806,9 +21806,17 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8668258866088874432, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8226937808211180532, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -7963666890538506483, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7805141804389684465, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
       propertyPath: m_Layer
@@ -21822,6 +21830,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: -7157310249750711968, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6506428211992742904, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -5195039496312385792, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
       propertyPath: m_Layer
       value: 11
@@ -21830,9 +21846,29 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: -4158426151467589301, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3543962992412287004, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3486561242039942507, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -3103475435576830443, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -3061807224642881944, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2244397290052668276, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1858253945407898567, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
       propertyPath: m_Layer
@@ -21841,6 +21877,22 @@ PrefabInstance:
     - target: {fileID: -1800231621019895859, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: -1635361700578575875, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1272655196796845845, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -877020066534940791, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -859195862314520174, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -30208361169577929, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
       propertyPath: m_Layer
@@ -21878,9 +21930,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 5383996124186828401, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569804218553533610, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677788197158122193, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7828588606529048828, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
       propertyPath: m_Layer
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8507546230206788871, guid: 3c69757a74df2724f931bb9b65cd1878, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
