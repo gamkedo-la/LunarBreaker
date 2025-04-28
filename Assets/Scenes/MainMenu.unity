@@ -8714,16 +8714,17 @@ MonoBehaviour:
     occlusion optimization, laser trap movement, intro scroll, scene lighting, doors,
     pipes, girders, electrical boxes, stairs\nNicole-Brandon Paul: Music (combat
     and menu)\nIan Cherabier: Health system and related UI, laser damage support,
-    game over handling, main menu, player hurt feedback, muzzle flash bug fix, variou
+    game over handling, main menu, player hurt feedback, muzzle flash bug fix, various
     bug fixes\nChris DeLeon: Camera and drone vision, pickups, revolver implementation,
-    enemy/item placement, win text\nCassidy Noble: Environment prop models (desk,
-    office chair, filing cabinet, corkboard)\nMichael Avrie: Sound effects (revolver
-    shots, drone alarms, out of ammo, enemy damage, player jump and landing, pickups,
-    ending elevator)\nAlex (Weinbagz) Weinberg: Audio manager/mixer, ambient audio
-    (outside, labs, drone hum), gun sounds (casings, mac-10 shots)\nDarius \"TheOscillatingTortoise\"
-    Gourdine: Enemy explosion sound, player hurt sound\nNaji Mammeri: Movement tuning,
-    environment standards testing, patrol code (not in release)\nLuis Monta\xF1a:
-    Ammo UI, gun icon (early draft, not in release)\nTyler Funk: Ground texture"
+    enemy/item placement, win text, explosion effect\nCassidy Noble: Environment
+    prop models (desk, office chair, filing cabinet, corkboard)\nMichael Avrie: Sound
+    effects (revolver shots, drone alarms, out of ammo, enemy damage, player jump
+    and landing, pickups, ending elevator)\nAlex (Weinbagz) Weinberg: Audio manager/mixer,
+    ambient audio (outside, labs, drone hum), gun sounds (casings, mac-10 shots)\nDarius
+    \"TheOscillatingTortoise\" Gourdine: Sounds (explosion, player hurt, out of ammo)\nNaji
+    Mammeri: Movement tuning, environment standards testing, patrol code (not in
+    release)\nLuis Monta\xF1a: Ammo UI, gun icon (early draft, not in release)\nTyler
+    Funk: Ground texture"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
