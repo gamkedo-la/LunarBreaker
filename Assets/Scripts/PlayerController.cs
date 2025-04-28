@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     //public GameObject vfx_muzzleflash_m10;
     public ParticleSystem vfx_muzzleflash_m10_A;
     public ParticleSystem vfx_muzzleflash_m10_B;
-    public GameObject vfx_muzzleflash_rev;
+    public ParticleSystem vfx_muzzleflash_rev_web;
     public GameObject vfx_bullet_hole;
     public GameObject vfx_bullet_spark;
     public GameObject damagePrefabEffect;
@@ -201,7 +201,7 @@ public class PlayerController : MonoBehaviour
                     }
                 }
                 RevolverAmmo--;
-                vfx_muzzleflash_rev.GetComponent<VisualEffect>().Play();
+                vfx_muzzleflash_rev_web.Play();
             }
 
 
