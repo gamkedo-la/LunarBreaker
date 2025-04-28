@@ -11074,7 +11074,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 13d6827985d14dd42b4a18eef62d5d86, type: 3}
   - {fileID: 8300000, guid: a7fcbb16d50368d489cd91ac6e8b93d4, type: 3}
   emptyGunClips:
-  - {fileID: 8300000, guid: 7188dad95afab4ed599be66dce787e7c, type: 3}
+  - {fileID: 8300000, guid: 8d11eedba32ae5744bd6b8aaaa606eac, type: 3}
+  - {fileID: 8300000, guid: 4e09a2f837309064db1ab38fd78bfd2e, type: 3}
+  - {fileID: 8300000, guid: 3f84aaa9dce6cfb4f8912ae7ce5449bf, type: 3}
+  - {fileID: 8300000, guid: 4ab29a3ec2efdba4ca71a6028847261e, type: 3}
+  - {fileID: 8300000, guid: 12ef6d9de849bb04f8af121b6057948d, type: 3}
   playerDamagedClips:
   - {fileID: 8300000, guid: 3098254a55be8bd4485810a39e33e4b7, type: 3}
   - {fileID: 8300000, guid: ba5cfb7c1887ff446ba5b7c914ac9af1, type: 3}
