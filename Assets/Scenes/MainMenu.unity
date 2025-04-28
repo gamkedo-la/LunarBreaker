@@ -8718,9 +8718,9 @@ MonoBehaviour:
     bug fixes\nChris DeLeon: Camera and drone vision, pickups, revolver implementation,
     enemy/item placement, win text, explosion effect\nCassidy Noble: Environment
     prop models (desk, office chair, filing cabinet, corkboard)\nMichael Avrie: Sound
-    effects (revolver shots, drone alarms, out of ammo, enemy damage, player jump
-    and landing, pickups, ending elevator)\nAlex (Weinbagz) Weinberg: Audio manager/mixer,
-    ambient audio (outside, labs, drone hum), gun sounds (casings, mac-10 shots)\nDarius
+    effects (revolver shots, drone alarms, enemy damage, player jump and landing,
+    pickups, ending elevator)\nAlex (Weinbagz) Weinberg: Audio manager/mixer, ambient
+    audio (outside, labs, drone hum), gun sounds (casings, mac-10 shots)\nDarius
     \"TheOscillatingTortoise\" Gourdine: Sounds (explosion, player hurt, out of ammo)\nNaji
     Mammeri: Movement tuning, environment standards testing, patrol code (not in
     release)\nLuis Monta\xF1a: Ammo UI, gun icon (early draft, not in release)\nTyler
